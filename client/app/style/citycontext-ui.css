@@ -1,0 +1,324 @@
+.citycontext-ui {
+  font-family: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  color: black;
+}
+.citycontext-ui a {
+  color: #40983F;
+  text-decoration: none;
+}
+.citycontext-ui a:hover {
+  color: #225021;
+}
+.citycontext-ui h5 {
+  font-size: 0.8em;
+}
+.citycontext-ui .button {
+  background-color: #00aeef;
+  border: none;
+  color: white;
+  font-size: 1em;
+  height: 2em;
+  margin-left: 10px;
+  padding: 0 12px;
+}
+.citycontext-ui .button:hover {
+  background-color: #388638;
+  cursor: pointer;
+}
+.citycontext-ui .button.selected {
+  background-color: #00aeef;
+}
+.citycontext-ui .form input[type='text'] {
+  height: 2em;
+  padding-left: 1em;
+}
+.citycontext-ui {
+  /*  GO FULL WIDTH BELOW 720 PIXELS */
+}
+.citycontext-ui section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+.citycontext-ui .col {
+  display: block;
+  float: left;
+}
+.citycontext-ui .col:first-child {
+  margin-left: 0;
+}
+.citycontext-ui .group:before,
+.citycontext-ui .group:after {
+  content: "";
+  display: table;
+}
+.citycontext-ui .group:after {
+  clear: both;
+}
+.citycontext-ui .group {
+  zoom: 1;
+  /* For IE 6/7 */
+}
+.citycontext-ui .span_12_of_12 {
+  width: 100%;
+}
+.citycontext-ui .span_11_of_12 {
+  width: 91.53%;
+}
+.citycontext-ui .span_10_of_12 {
+  width: 83.06%;
+}
+.citycontext-ui .span_9_of_12 {
+  width: 74.6%;
+}
+.citycontext-ui .span_8_of_12 {
+  width: 66.13%;
+}
+.citycontext-ui .span_7_of_12 {
+  width: 57.66%;
+}
+.citycontext-ui .span_6_of_12 {
+  width: 45%;
+}
+.citycontext-ui .span_5_of_12 {
+  width: 48.73%;
+}
+.citycontext-ui .span_4_of_12 {
+  width: 32.26%;
+}
+.citycontext-ui .span_3_of_12 {
+  width: 23.8%;
+}
+.citycontext-ui .span_2_of_12 {
+  width: 15.33%;
+}
+.citycontext-ui .span_1_of_12 {
+  width: 6.866%;
+}
+@media only screen and (max-width: 720px) {
+  .citycontext-ui .col {
+    margin: 1% 0 1% 0%;
+  }
+  .citycontext-ui .span_1_of_12,
+  .citycontext-ui .span_2_of_12,
+  .citycontext-ui .span_3_of_12,
+  .citycontext-ui .span_4_of_12,
+  .citycontext-ui .span_5_of_12,
+  .citycontext-ui .span_6_of_12,
+  .citycontext-ui .span_7_of_12,
+  .citycontext-ui .span_8_of_12,
+  .citycontext-ui .span_9_of_12,
+  .citycontext-ui .span_10_of_12,
+  .citycontext-ui .span_11_of_12,
+  .citycontext-ui .span_12_of_12 {
+    width: 80%;
+  }
+}
+.citycontext-ui .map-container {
+  padding-bottom: 20px;
+}
+.citycontext-ui .map-container .map {
+  bottom: 0;
+  height: 500px;
+  position: relative;
+  width: 100%;
+}
+.citycontext-ui .spinner {
+  background: #CCC;
+  background: -webkit-linear-gradient(left, #CCC 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, #CCC 10%, rgba(255, 255, 255, 0) 42%);
+  border-radius: 50%;
+  font-size: 10px;
+  height: 25px;
+  margin-left: 15px;
+  position: relative;
+  text-indent: -9999em;
+  width: 25px;
+  -webkit-animation: load3 1.4s infinite linear;
+  animation: load3 1.4s infinite linear;
+}
+.citycontext-ui .spinner:before {
+  background: #CCC;
+  border-radius: 100% 0 0 0;
+  content: '';
+  height: 50%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 50%;
+}
+.citycontext-ui .spinner:after {
+  background: #FFF;
+  border-radius: 50%;
+  bottom: 0;
+  content: '';
+  height: 75%;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 75%;
+}
+@-webkit-keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load3 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.citycontext-ui .data-table {
+  padding-left: 20px;
+}
+.citycontext-ui .data-table table {
+  border-spacing: 0;
+  width: 100%;
+  max-width: 100%;
+}
+.citycontext-ui .data-table table tr:nth-of-type(odd) {
+  background-color: rgba(204, 204, 204, 0.2);
+}
+.citycontext-ui .data-table table td {
+  border-bottom: 1px solid #CCC;
+  line-height: 1.4em;
+  padding: 0.7em;
+}
+.citycontext-ui .results {
+  padding-top: 15px;
+}
+.citycontext-ui .form-group {
+  float: left;
+}
+.citycontext-ui.criminality-widget-container .graph-container {
+  height: 430px;
+  position: relative;
+}
+@media only screen and (max-width: 720px) {
+  .citycontext-ui.criminality-widget-container .graph-container {
+    height: 480px;
+  }
+}
+.citycontext-ui.criminality-widget-container .graph-container:after {
+  content: " ";
+  clear: both;
+  display: table;
+}
+.citycontext-ui.criminality-widget-container .graph-container .graph {
+  margin-left: 40px;
+}
+.citycontext-ui.criminality-widget-container .graph-container .control {
+  margin-bottom: 20px;
+  float: right;
+}
+.citycontext-ui.criminality-widget-container .graph-container .legend {
+  float: right;
+}
+.citycontext-ui.criminality-widget-container .graph-container .legend .legend-item {
+  margin-left: 30px;
+  float: left;
+}
+.citycontext-ui.criminality-widget-container .graph-container .legend .legend-item .legend-color {
+  width: 1em;
+  height: 1em;
+  margin-right: 8px;
+  float: left;
+}
+.citycontext-ui.criminality-widget-container .graph-container .legend .legend-item .legend-text {
+  float: left;
+}
+.citycontext-ui.schools-widget-container .list-container {
+  padding-left: 30px;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase:first-child h4 {
+  margin-top: 0;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details {
+  border-bottom: solid 1px #B2B2B2;
+  margin-left: 1.5em;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-heading h5 {
+  margin: 1em 0;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-heading h5 .caret {
+  margin-right: 10px;
+  display: inline-block;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-heading h5 .caret.caret-expanded {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transform-origin: 50% 53%;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-heading h5 .school-details-distance {
+  font-weight: normal;
+  float: right;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-body {
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+  height: 0px;
+  overflow: hidden;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-body.expanded {
+  height: 120px;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-body .school-details-performance {
+  margin-top: 0;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-body .school-details-performance dt,
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-body .school-details-performance dd {
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-body .school-details-performance dt {
+  float: left;
+  width: 160px;
+  clear: left;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-body .school-details-performance dd {
+  margin-left: 180px;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-body .school-details-performance .circle {
+  float: left;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+  margin-top: 6px;
+  border-radius: 50%;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-body .school-details-performance .empty-circle {
+  border: #40983F 1px solid;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-body .school-details-performance .full-circle {
+  background-color: #40983F;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-body .school-details-performance:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+.citycontext-ui.schools-widget-container .list-container .school-phase .school-details .school-details-body .school-details-url {
+  margin: 0;
+  font-size: 0.9em;
+  float: right;
+}

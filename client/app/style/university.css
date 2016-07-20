@@ -1,0 +1,42 @@
+
+  ng-map {
+    height: 400px;
+    width: auto;
+    position: relative;
+  }
+
+  div .city {
+    padding: 10px;
+    margin-bottom:  20px;
+    border-radius: 5px;
+    border: 3px solid #00aeef;
+    /*background-image: url(http://img.archiexpo.com/images_ae/photo-g/141377-8276726.jpg);*/
+  }
+
+  div .map {
+    /*padding: 10px;*/
+    margin: 0px;
+    border-radius: 5px;
+    border: 3px solid #00aeef;
+    /*background-image: url(http://img.archiexpo.com/images_ae/photo-g/141377-8276726.jpg);*/
+  }
+
+  div .ranking {
+    /*padding: 10px;*/
+    margin: 0px;
+    border-radius: 5px;
+    border: 3px solid #00aeef;
+    /*background-image: url(http://img.archiexpo.com/images_ae/photo-g/141377-8276726.jpg);*/
+  }
+
+  div.dataTables_wrapper {
+      padding: 20px;
+  }
+
+  div .description {
+    padding: 20px;
+    margin: 0px;
+    border-radius: 5px;
+    border: 3px solid #00aeef;
+    /*background-image: url(http://img.archiexpo.com/images_ae/photo-g/141377-8276726.jpg);*/
+  }

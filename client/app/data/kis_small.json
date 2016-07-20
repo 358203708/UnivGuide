@@ -1,0 +1,85 @@
+[
+ {
+   "UKPRN": 10000093,
+   "NAME": "Accrington and Rossendale College",
+   "KISCOURSEID": "001042A",
+   "TITLE": "Health and Social Care",
+   "KISMODE": 1
+ },
+ {
+   "UKPRN": 10000093,
+   "NAME": "Accrington and Rossendale College",
+   "KISCOURSEID": "001043A",
+   "TITLE": "Early Years",
+   "KISMODE": 1
+ },
+ {
+   "UKPRN": 10000093,
+   "NAME": "Accrington and Rossendale College",
+   "KISCOURSEID": "001746A",
+   "TITLE": "Mental Health Work",
+   "KISMODE": 1
+ },
+ {
+   "UKPRN": 10000093,
+   "NAME": "Accrington and Rossendale College",
+   "KISCOURSEID": "001877A",
+   "TITLE": "Alcohol and Substance Misuse Work",
+   "KISMODE": 1
+ },
+ {
+   "UKPRN": 10000093,
+   "NAME": "Accrington and Rossendale College",
+   "KISCOURSEID": "002639A",
+   "TITLE": "Software Engineering",
+   "KISMODE": 1
+ },
+ {
+   "UKPRN": 10000093,
+   "NAME": "Accrington and Rossendale College",
+   "KISCOURSEID": "002640A",
+   "TITLE": "Sports Science and Coaching Studies",
+   "KISMODE": 1
+ },
+ {
+   "UKPRN": 10000093,
+   "NAME": "Accrington and Rossendale College",
+   "KISCOURSEID": "002641A",
+   "TITLE": "Music Production",
+   "KISMODE": 1
+ },
+ {
+   "UKPRN": 10000093,
+   "NAME": "Accrington and Rossendale College",
+   "KISCOURSEID": "002642A",
+   "TITLE": "Health and Applied Social Studies",
+   "KISMODE": 1
+ },
+ {
+   "UKPRN": 10000824,
+   "NAME": "Bournemouth University",
+   "KISCOURSEID": "MCCF-B320",
+   "TITLE": "Chiropractic",
+   "KISMODE": 1
+ },
+ {
+   "UKPRN": 10007155,
+   "NAME": "The University of Portsmouth",
+   "KISCOURSEID": "C1582AL",
+   "TITLE": "Early Years Care And Education",
+   "KISMODE": 2
+ },
+ {
+   "UKPRN": 10007155,
+   "NAME": "The University of Portsmouth",
+   "KISCOURSEID": "C2200",
+   "TITLE": "Engineering",
+   "KISMODE": 2
+ },
+ {
+   "UKPRN": 10000275,
+   "NAME": "Amersham and Wycombe College",
+   "KISCOURSEID": "AB2819",
+   "TITLE": "Sound Production",
+   "KISMODE": 1
+ }]
