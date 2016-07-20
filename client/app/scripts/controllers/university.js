@@ -86,6 +86,9 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                 criminalityWidget.queryByLatLon($scope.universityInfo[0] + ',' + $scope.universityInfo[1]);
                 demographicsWidget.queryByLatLon($scope.universityInfo[0] + ',' + $scope.universityInfo[1]);
             });
+            /*Course statistics visualisation*/
+            var chartSeries = [];
+            /*Weather forecast visualisation*/
             var forecast = [];
             var daily = [];
             var time_zone = 1000 * (new Date().getTimezoneOffset()) * (-60);
