@@ -1,0 +1,7 @@
+{
+    "jscodehints.detectedExclusions": [
+        "/Users/ShanchuanWu/GitHub/UnivGuide/server/route.js",
+        "/Users/ShanchuanWu/GitHub/UnivGuide/server/models/University.js",
+        "/Users/ShanchuanWu/GitHub/UnivGuide/client/app/js/wow.js"
+    ]
+}

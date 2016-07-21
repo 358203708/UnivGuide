@@ -43,9 +43,6 @@ module.exports = function(config) {
       'bower_components/ng-maps/dist/ng-maps.js',
       'bower_components/ngmap/build/scripts/ng-map.js',
       'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
-      'bower_components/highcharts/highcharts.js',
-      'bower_components/highcharts/highcharts-more.js',
-      'bower_components/highcharts/modules/exporting.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

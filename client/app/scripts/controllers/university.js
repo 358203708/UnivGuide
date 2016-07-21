@@ -97,6 +97,8 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                 // Get the CSV and create the chart
                 $.getJSON('http://api.openweathermap.org/data/2.5/forecast?lat=' + $scope.result[1].data[0].Latitude + '&lon=' + $scope.result[1].data[0].Longitude + '&units=metric&appid=7910a9e3a5d82b39a8f86c6049fc9c85', showForecast);
                 $.getJSON('http://api.openweathermap.org/data/2.5/forecast/daily?lat=' + $scope.result[1].data[0].Latitude + '&lon=' + $scope.result[1].data[0].Longitude + '&units=metric&cnt=14&appid=7910a9e3a5d82b39a8f86c6049fc9c85', showForecastDaily);
+                //                $.getJSON("/data/2.5/forecast?callback=?lat=" + $scope.result[1].data[0].Latitude + "&lon=" + $scope.result[1].data[0].Longitude + "&units=metric&appid=b1b15e88fa797225412429c1c50c122a", showForecast);
+                //                $.getJSON("/data/2.5/forecast/daily?callback=?lat=" + $scope.result[1].data[0].Latitude + "&lon=" + $scope.result[1].data[0].Longitude + "&units=metric&cnt=14&appid=b1b15e88fa797225412429c1c50c122a", showForecastDaily);
             });
             //            function showCurrentCity(d) {
             //                current_city_id = d.id;

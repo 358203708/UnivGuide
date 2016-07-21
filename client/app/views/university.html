@@ -59,35 +59,102 @@
                                 <hr class="small"> </center>
                             <div class="description">
                                 <div class="row">
-                                    <div class="col-md-6 col-md-6 col-ms-12">
-                                        <div class="basic">
-                                            <br>AssessmentMethodsUrl: {{courseInfo.AssessmentMethodsUrl}}
-                                            <br> AverageInScheduledLearningAndTeaching: {{courseInfo.AverageInScheduledLearningAndTeaching}}
-                                            <br> AverageInWrittenExams: {{courseInfo.AverageInWrittenExams}}
-                                            <br> CoursePageUrl: {{courseInfo.CoursePageUrl}}
-                                            <br> DistanceLearning: {{courseInfo.DistanceLearning}}
-                                            <br> EmploymentDetailsUrl: {{courseInfo.EmploymentDetailsUrl}}
-                                            <br> FeeVariesByYear: {{courseInfo.FeeVariesByYear}}
-                                            <br> FeeWaiverAvailable: {{courseInfo.FeeWaiverAvailable}}
-                                            <br> FeesToBeConfirmed:{{courseInfo.FeesToBeConfirmed}}
-                                            <br> FoundationYearAvailable: {{courseInfo.FoundationYearAvailable}}
-                                            <br> Honours: {{courseInfo.Honours}}
-                                            <br> KisMode: {{courseInfo.KisMode}}
-                                            <br> LearningAndTeachingMethodsUrl: {{courseInfo.LearningAndTeachingMethodsUrl}}
-                                            <br> LocationChangesDuringCourse: {{courseInfo.LocationChangesDuringCourse}}
-                                            <br> MaximumFeeForEnglandDomicile: {{courseInfo.MaximumFeeForEnglandDomicile}}
-                                            <br> SandwichAvailable: {{courseInfo.SandwichAvailable}}
-                                            <br> StudyLevel: {{courseInfo.StudyLevel}}
-                                            <br> YearAbroadAvailable: {{courseInfo.YearAbroadAvailable}} </div>
+                                    <div class="col-md-12 col-md-12 col-ms-12">
+                                        <div class="basic table-responsive">
+                                            <center>
+                                                <h3>Basic Information</h3></center>
+                                            <br>
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>First Name</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Course</td>
+                                                        <td> {{universityInfo[3]}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Mode</td>
+                                                        <td>{{universityInfo[4]}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Study Level
+                                                            <br> </td>
+                                                        <td>{{courseInfo.StudyLevel}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Course Page</td>
+                                                        <td><a href="{{courseInfo.CoursePageUrl}}">Click here to see detailed information on the official university website</a></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>AverageInWrittenExams</td>
+                                                        <td> {{courseInfo.AverageInWrittenExams}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>AverageInWrittenExams</td>
+                                                        <td> {{courseInfo.AverageInWrittenExams}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Employment Details</td>
+                                                        <td>
+                                                            <a href="{{courseInfo.EmploymentDetailsUrl}}"></a>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Foundation Year Available</td>
+                                                        <td> {{courseInfo.FoundationYearAvailable}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Average Tution Fee</td>
+                                                        <td> {{courseInfo.MaximumFeeForEnglandDomicile}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
-                                    <div class="col-md-6 col-md-6 col-ms-12">
-                                        <div class="accommodation">
-                                            <br>BedCostLowerQuartile: {{courseLoc.BedCostLowerQuartile}}
-                                            <br> BedCostUpperQuartile:{{courseLoc.BedCostUpperQuartile}}
-                                            <br> NumberOfBeds:{{courseLoc.NumberOfBeds}}
-                                            <br>AccommodationCostUrl: {{courseLoc.AccommodationCostUrl}}
-                                            <br> PrivateBedCostLowerQuartile:{{courseLoc.PrivateBedCostLowerQuartile}}
-                                            <br> PrivateBedCostUpperQuartile:{{courseLoc.PrivateBedCostUpperQuartile}} </div>
+                                    <div class="col-md-12 col-md-12 col-ms-12">
+                                        <div class="accommodation table-responsive">
+                                            <center>
+                                                <h3>Accommodation</h3></center>
+                                            <table class="table table-condensed">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>First Name</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>BedCostLowerQuartile</td>
+                                                        <td> {{courseLoc.BedCostLowerQuartile}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>BedCostUpperQuartile</td>
+                                                        <td>{{courseLoc.BedCostUpperQuartile}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>NumberOfBeds
+                                                            <br> </td>
+                                                        <td>{{courseLoc.NumberOfBeds}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>AccommodationCostUrl</td>
+                                                        <td>{{courseLoc.AccommodationCostUrl}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>PrivateBedCostLowerQuartile</td>
+                                                        <td>{{courseLoc.PrivateBedCostLowerQuartile}}</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>PrivateBedCostUpperQuartile</td>
+                                                        <td> {{courseLoc.PrivateBedCostUpperQuartile}}</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                         <div class="studentUnion">
                                             <br> StudentUnionUrl:{{courseLoc.StudentUnionUrl}} </div>
                                     </div>
@@ -96,7 +163,7 @@
                         </div>
                         <div class="col-lg-12 col-md-12 col-ms-12">
                             <center>
-                                <h2>University Ranking</h2>
+                                <h2>Ranking Table</h2>
                                 <hr class="small"> </center>
                             <div class="ranking">
                                 <table class="table  dataTable no-footer" style="text-align:center;" id="data-table">
