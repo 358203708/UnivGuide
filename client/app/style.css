@@ -685,7 +685,7 @@ body {
 }
 
 body {
-    overflow: hidden;
+    overflow: auto;
 }
 
 
@@ -725,16 +725,11 @@ body {
 
 hr.small {
     max-width: 100px;
-
 }
 
 hr.long {
     max-width: 1000px;
-
 }
-
-
-
 
 
 /* Preloader */
