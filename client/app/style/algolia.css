@@ -16,15 +16,20 @@
     padding-bottom: 5px;
     padding-left: 20px;
     padding-right: 20px;
-    background-image: linear-gradient(90deg, #2a5e82 10%, #182848 90%)
+    /*    background-image: linear-gradient(90deg, #2a5e82 10%, #182848 90%)*/
+    background-image: url(//dtmw9u23bb9ya.cloudfront.net/uploads/image/file/4174/institution_full_E70_colchester_campus.jpg);
 }
 
 .search-box-wrapper {
     padding: 10px 10px;
     font-size: 1em;
-    background-color: #122337;
+    /* background-color: #122337;*/
     max-width: 100%;
     margin: 140px;
+    background: rgba(5, 23, 29, 0.8);
+    border-radius: 4px;
+    color: black;
+    padding: 25px 30px 40px 30px;
 }
 
 .search-box {
@@ -55,25 +60,29 @@
 }
 
 #inputfield input::-webkit-input-placeholder {
-    color: #4A6B82;
+    /*    color: #4A6B82;*/
+    color: white;
 }
 
 #inputfield input::-moz-placeholder {
-    color: #4A6B82;
+    /*    color: #4A6B82;*/
+    color: white;
 }
 
 
 /* firefox 19+ */
 
 #inputfield input:-ms-input-placeholder {
-    color: #4A6B82;
+    /*    color: #4A6B82;*/
+    color: white;
 }
 
 
 /* ie */
 
 #inputfield inputinput:-moz-placeholder {
-    color: #4A6B82;
+    /*    color: #4A6B82;*/
+    color: white;
 }
 
 #inputfield input:focus {
@@ -143,6 +152,7 @@
 
 .algolia-autocomplete .aa-hint {
     color: #999;
+    padding: 5px;
 }
 
 .algolia-autocomplete .aa-dropdown-menu {
@@ -153,8 +163,15 @@
 }
 
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion {
+    /*
     cursor: pointer;
     padding: 5px 4px;
+*/
+    text-align: left;
+    padding: 3px 20px;
+    font-size: 14px;
+    line-height: 24px;
+    border-bottom: solid 1px #F3F4F7
 }
 
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
@@ -164,6 +181,7 @@
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
     font-weight: bold;
     font-style: normal;
+    font-size: 1.2em;
 }
 
 .algolia-autocomplete .category {
