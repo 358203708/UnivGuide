@@ -46,17 +46,17 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
         };
     };
     $scope.$on('autocomplete:selected', function (event, suggestion, dataset) {
+        //console.log(suggestion);
         $scope.pubukprn = suggestion.UKPRN;
         $scope.kisCourseId = suggestion.KISCOURSEID;
         $scope.kisMode = suggestion.MODE;
-        console.log(suggestion);
+        console.log($scope.pubukprn);
+        console.log($scope.kisCourseId);
+        console.log($scope.kisMode);
         $scope.isShow = function (suggestion) {
             if (suggestion == []) return false;
             else return true;
         };
-        //        console.log($scope.pubukprn);
-        //        console.log($scope.kisCourseId);
-        //        console.log($scope.kisMode);
         /*Send GET quries to UniStats API */
         var result = [];
         var promises = [];
@@ -97,9 +97,13 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
             var daily = [];
             var time_zone = 1000 * (new Date().getTimezoneOffset()) * (-60);
             var month = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Avg", "Sen", "Oct", "Nov", "Dec"];
-            // Get the weather data and create the chart
-            $.getJSON('http://api.openweathermap.org/data/2.5/forecast?lat=' + $scope.result[1].data[0].Latitude + '&lon=' + $scope.result[1].data[0].Longitude + '&units=metric&appid=7910a9e3a5d82b39a8f86c6049fc9c85', showForecast);
-            $.getJSON('http://api.openweathermap.org/data/2.5/forecast/daily?lat=' + $scope.result[1].data[0].Latitude + '&lon=' + $scope.result[1].data[0].Longitude + '&units=metric&cnt=14&appid=7910a9e3a5d82b39a8f86c6049fc9c85', showForecastDaily);
+            $(function () {
+                // Get the CSV and create the chart
+                $.getJSON('http://api.openweathermap.org/data/2.5/forecast?lat=' + $scope.result[1].data[0].Latitude + '&lon=' + $scope.result[1].data[0].Longitude + '&units=metric&appid=7910a9e3a5d82b39a8f86c6049fc9c85', showForecast);
+                $.getJSON('http://api.openweathermap.org/data/2.5/forecast/daily?lat=' + $scope.result[1].data[0].Latitude + '&lon=' + $scope.result[1].data[0].Longitude + '&units=metric&cnt=14&appid=7910a9e3a5d82b39a8f86c6049fc9c85', showForecastDaily);
+                //                $.getJSON("/data/2.5/forecast?callback=?lat=" + $scope.result[1].data[0].Latitude + "&lon=" + $scope.result[1].data[0].Longitude + "&units=metric&appid=b1b15e88fa797225412429c1c50c122a", showForecast);
+                //                $.getJSON("/data/2.5/forecast/daily?callback=?lat=" + $scope.result[1].data[0].Latitude + "&lon=" + $scope.result[1].data[0].Longitude + "&units=metric&cnt=14&appid=b1b15e88fa797225412429c1c50c122a", showForecastDaily);
+            });
             //            function showCurrentCity(d) {
             //                current_city_id = d.id;
             //                $('#city_name').html(d.name + ', ' + d.sys.country);
