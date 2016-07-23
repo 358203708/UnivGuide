@@ -17,12 +17,12 @@
     padding-left: 20px;
     padding-right: 20px;
     /*    background-image: linear-gradient(90deg, #2a5e82 10%, #182848 90%)*/
-    background-image: url(//dtmw9u23bb9ya.cloudfront.net/uploads/image/file/4174/institution_full_E70_colchester_campus.jpg);
+    background-image: url(//dtmw9u23bb9ya.cloudfront.net/uploads/image/file/4156/institution_full_1057_Main_Campus.jpg);
 }
 
 .search-box-wrapper {
     padding: 10px 10px;
-    font-size: 1em;
+    font-size: 1.1em;
     /* background-color: #122337;*/
     max-width: 100%;
     margin: 140px;
@@ -42,6 +42,7 @@
 #inputfield i {
     font-size: 25px;
     color: white;
+    /*    color: #00aeef;*/
     position: absolute;
     left: 0px;
     bottom: 10px;
