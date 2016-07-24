@@ -28,7 +28,7 @@
 //});
 angular.module('clientApp', [
     'ngRoute', 'ngSanitize', 'restangular', 'ngTable', 'algoliasearch', 'algolia.autocomplete', 'ngMap', 'ui.bootstrap'
-  ]).config(function ($routeProvider, RestangularProvider) {
+  , 'angucomplete-alt']).config(function ($routeProvider, RestangularProvider) {
     $routeProvider.when('/', {
         templateUrl: 'views/university.html'
         , controller: 'UniversityCtrl'

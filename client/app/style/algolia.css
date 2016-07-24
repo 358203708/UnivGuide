@@ -15,8 +15,7 @@
     padding-top: 5px;
     padding-bottom: 5px;
     padding-left: 20px;
-    padding-right: 20px;
-    /*    background-image: linear-gradient(90deg, #2a5e82 10%, #182848 90%)*/
+    padding-right: 20px;    /*    background-image: linear-gradient(90deg, #2a5e82 10%, #182848 90%)*/
     background-image: url(//dtmw9u23bb9ya.cloudfront.net/uploads/image/file/4156/institution_full_1057_Main_Campus.jpg);
 }
 
@@ -27,7 +26,7 @@
     max-width: 100%;
     margin: 140px;
     background: rgba(5, 23, 29, 0.8);
-    border-radius: 4px;
+    border-radius: 6px;
     color: black;
     padding: 25px 30px 40px 30px;
 }
@@ -176,7 +175,9 @@
 }
 
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion.aa-cursor {
-    background: #f8f8f8;
+    /*    background: #f8f8f8;*/
+    color: #fff;
+    background-color: #00aeef;
 }
 
 .algolia-autocomplete .aa-dropdown-menu .aa-suggestion em {
