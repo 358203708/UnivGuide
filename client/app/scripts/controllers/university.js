@@ -22,9 +22,9 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
         displayForm: false
     }).render();
     //   criminalityWidget.queryByLatLon('51.623066,-3.983703');
-    var demographicsWidget = citycontextUI.DemographicsWidget('#demographics-widget', {
-        displayForm: false
-    }).render();
+    //    var demographicsWidget = citycontextUI.DemographicsWidget('#demographics-widget', {
+    //        displayForm: false
+    //    }).render();
     //   demographicsWidget.queryByLatLon('50.907916,-1.400318');
     /*Algolia search widget*/
     var client = algolia.Client('4NHNQEE2ZH', '14a0b4fc5ebaddc5f6372146de81f6f0');
@@ -50,13 +50,16 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
         $scope.pubukprn = suggestion.UKPRN;
         $scope.kisCourseId = suggestion.KISCOURSEID;
         $scope.kisMode = suggestion.MODE;
+        $scope.name = suggestion.NAME;
         console.log($scope.pubukprn);
         console.log($scope.kisCourseId);
         console.log($scope.kisMode);
+        console.log($scope.name);
         $scope.isShow = function (suggestion) {
             if (suggestion == []) return false;
             else return true;
         };
+        console.log(suggestion);
         /*Send GET quries to UniStats API */
         var result = [];
         var promises = [];
@@ -78,8 +81,10 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
             //   $scope.courseInfo.push($scope.result[0].data);
             $scope.courseInfo = $scope.result[0].data;
             $scope.courseLoc = $scope.result[1].data[0];
+            //            $scope.courseStat = $scope.result[1].data[1];
             console.log($scope.courseInfo);
             console.log($scope.courseLoc);
+            //             console.log($scope.courseStat);
             /*Maps*/
             NgMap.getMap().then(function (map) {
                 $scope.map = map;
@@ -88,7 +93,7 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                 // console.log($scope.universityInfo);
                 transportWidget.queryByLatLon($scope.universityInfo[0] + ',' + $scope.universityInfo[1]);
                 criminalityWidget.queryByLatLon($scope.universityInfo[0] + ',' + $scope.universityInfo[1]);
-                demographicsWidget.queryByLatLon($scope.universityInfo[0] + ',' + $scope.universityInfo[1]);
+                //                demographicsWidget.queryByLatLon($scope.universityInfo[0] + ',' + $scope.universityInfo[1]);
             });
             /*Course statistics visualisation*/
             var chartSeries = [];
