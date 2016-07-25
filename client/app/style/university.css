@@ -39,3 +39,220 @@
             border: 3px solid #00aeef;
             /*background-image: url(http://img.archiexpo.com/images_ae/photo-g/141377-8276726.jpg);*/
         }
+        /* Univeristy & Course */
+        
+        header.pageTitle {
+            position: relative;
+            margin: 0 0 20px 0;
+        }
+        
+        header.pageTitle h1 {
+            margin: 0 0 10px 0;
+            font: normal 2.4em/1.1 'AsapBold', sans-serif;
+        }
+        
+        header.pageTitle h1 span {
+            display: block;
+            margin: 10px 0 4px 0;
+            font: normal 0.37em 'AsapRegular', sans-serif;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+        }
+        
+        .contentWrapper {
+            background: #fff;
+            min-height: 500px;
+            padding: 20px;
+        }
+        
+        ol,
+        ul {
+            list-style: none;
+        }
+        
+        .resultMeasure {
+            display: inline-block;
+        }
+        
+        .resultMeasure strong span:first-child,
+        .rowTopMeasure .tableTip,
+        .rowTopMeasure .tableTipNull {
+            background: #00aeef;
+            color: #fff;
+            padding: 4px 9px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        
+        .nonKIS .resultMeasure strong span {
+            background: #666;
+        }
+        
+        .resultMeasure strong.noData span {
+            color: #333;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+        }
+        
+        .measureList {
+            margin: 0px -20px -10px -60px
+        }
+        
+        .measureList > li {
+            padding: 20px 20px 0 20px;
+            border-top: 2px solid #00aeef;
+        }
+        
+        .measureHighlight {
+            margin: 0 0 15px 0;
+        }
+        
+        .measureHighlight .resultMeasure {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .resultMeasureText .resultMeasure {
+            display: inline;
+        }
+        
+        .resultMeasureText .resultMeasure + p {
+            margin-top: 15px;
+        }
+        
+        .resultMeasureText .iconTooltip {
+            top: 3px;
+        }
+        
+        .chartExplanation {
+            margin-bottom: 10px;
+        }
+        
+        .courseNumStage {
+            margin-bottom: 20px;
+        }
+        
+        .chartExplanation > p,
+        .courseNumStage > p {
+            display: inline;
+        }
+        
+        .measureHighlight .resultMeasure .measureSubtitle {
+            font-size: 0.5em;
+            display: block;
+            font-weight: normal;
+        }
+        
+        .measureHighlight .resultMeasure strong {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .measureHighlight .resultMeasure strong span:first-child {
+            display: inline-block;
+        }
+        
+        .measureHighlight .resultMeasureText .iconTooltip {
+            width: 26px;
+            height: 26px;
+            margin-top: 2px;
+            margin-right: 6px;
+            -webkit-border-radius: 13px;
+            -moz-border-radius: 13px;
+            border-radius: 13px;
+        }
+        
+        .chartExplanation .iconTooltip {
+            top: -2px;
+        }
+        
+        .measureHighlight .resultMeasureText .iconTooltip .fa {
+            font-size: 18px;
+            margin-top: 4px;
+        }
+        
+        .measureAdditional {
+            margin-bottom: 20px;
+        }
+        
+        .measureAdditional h2 {
+            font-weight: bold;
+            font-size: 1em;
+        }
+        
+        .measureAdditional p,
+        .measureAdditional h2,
+        .measureAdditional ul {
+            margin-bottom: 10px;
+        }
+        
+        .measureAdditional li + li {
+            margin-top: 5px;
+        }
+        
+        .stackedData {
+            border: 1px solid #E5E5E5;
+            margin-top: 15px;
+        }
+        
+        .stackedData > li {
+            padding: 10px 15px;
+        }
+        
+        .stackedData > li + li {
+            border-top: 1px solid #E5E5E5;
+        }
+        
+        .stackedData h3 {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+        
+        .stackedData .resultMeasure {
+            display: block;
+        }
+        
+        .stackedData .measureAdditional {
+            margin-bottom: 0;
+        }
+        
+        .chartBox {
+            margin-bottom: 15px;
+        }
+        
+        .chartBox h3 {
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+        }
+        
+        .chartplaceholder {
+            color: #c9d0d0;
+            text-align: center;
+            padding: 100px 0;
+            margin-bottom: 10px;
+        }
+        
+        .measureAdditional table {
+            width: 100%;
+            margin-bottom: 5px;
+        }
+        
+        .measureAdditional th {
+            font-weight: bold;
+            padding: 5px;
+        }
+        
+        .measureAdditional td {
+            padding: 5px;
+        }
+        
+        .measureListSingleColumn .measureHighlight,
+        .measureListSingleColumn .measureAdditional {
+            display: block;
+            width: auto;
+        }
+        
+        .measureListSingleColumn .measureAdditional {
+            padding-bottom: 1px;
+        }
