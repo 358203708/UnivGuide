@@ -398,41 +398,86 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                 this.latLong = {};
                 this.markers = [];
                 this.crimeData = {};
-                renderMap();
-                setupListeners();
-//                getLastUpdated();
-            };
 
-            function renderMap() {
-                var mapExists = document.getElementById("map-canvas");
-                //                var mapCenter = new google.maps.LatLng($scope.result[1].data[0].Latitude, $scope.result[1].data[0].Longitude);
-                var mapCenter = new google.maps.LatLng('51.5150', '0.0300');
-                if (mapExists) {
-                    this.map = new google.maps.Map(document.getElementById(this.domId), {
-                        center: mapCenter
-                        , zoom: 13
-                        , mapTypeId: google.maps.MapTypeId.ROADMAP
-                        , mapTypeControl: false
-                        , disableDefaultUI: true
-                        , zoomControl: true
-                        , zoomControlOptions: {
-                            style: google.maps.ZoomControlStyle.LARGE
-                            , position: google.maps.ControlPosition.RIGHT_BOTTOM
-                        }
-                    })
-                };
-            };
+                this.renderMap();
+                this.getCrimeData();
+                // this.setupListeners();
+                // this.getLastUpdated();
 
-            function getCrimeData(date) {
+
+            };
+            // CrimeMap.prototype.getLastUpdated = function () {
+            //     var self = this;
+            //     this.lastUpdated = {};
+            //     $.getJSON("http://data.police.uk/api/crime-last-updated", function (data) {
+            //         self.lastUpdated.rawDate = new Date(data.date);
+            //         if (self.lastUpdated.rawDate !== 'Invalid Date') {
+            //             self.lastUpdated.curr_month_num = self.lastUpdated.rawDate.getMonth() + 1; //Months are zero based
+            //             self.lastUpdated.curr_year_num = self.lastUpdated.rawDate.getFullYear();
+            //         }
+            //         self.updateDropdown();
+            //     });
+            // };
+            // CrimeMap.prototype.updateDropdown = function () {
+            //     var lastStaticMonth = 2;
+            //     if (this.lastUpdated.curr_month_num > lastStaticMonth) {
+            //         var monthsToBuild = this.lastUpdated.curr_month_num - lastStaticMonth;
+            //         for (var i = 0; i < monthsToBuild; ++i) {
+            //             var genMonth = (+lastStaticMonth + i + 1);
+            //             if (genMonth < 10) {
+            //                 genMonth = ('0' + genMonth);
+            //             }
+            //             $('#month').prepend('<option value="2015-' + genMonth + '">' + monthNames[+genMonth - 1] + ' 2015</option>');
+            //         }
+            //     }
+            //     $('#month')[0].selectedIndex = 0;
+            // };
+            //Render the initial map on the River Thames - ala Eastenders intro
+            CrimeMap.prototype.renderMap = function () {
+                var eastenders = new google.maps.LatLng('51.5150', '0.0300');
+                this.map = new google.maps.Map(document.getElementById(this.domId), {
+                    center: eastenders
+                    , zoom: 13
+                    , mapTypeId: google.maps.MapTypeId.ROADMAP
+                    , mapTypeControl: false
+                    , disableDefaultUI: true
+                    , zoomControl: true
+                    , zoomControlOptions: {
+                        style: google.maps.ZoomControlStyle.LARGE
+                        , position: google.maps.ControlPosition.RIGHT_BOTTOM
+                    }
+                });
+            };
+            CrimeMap.prototype.clearMarkers = function () {
+                for (var i = 0; i < this.markers.length; i++) {
+                    this.markers[i].setMap(null);
+                }
+                this.markers = new Array();
+            };
+            // CrimeMap.prototype.setupListeners = function () {
+            //     var self = this;
+            //
+            //     $('#month').on('change', function () {
+            //         self.getCrimeData($(this).val());
+            //     });
+            //     //                $("input:text:visible:first").focus();
+            // };
+            CrimeMap.prototype.getCrimeData = function (date) {
                 var dateString = ''
                     , self = this;
                 if (date) {
                     dateString = '&date=' + date;
                 }
+                //                if (pos) {
+                //                    this.lat = pos.coords.latitude;
+                //                    this.lng = pos.coords.longitude;
+                //                }
+                // this.showLoader();
                 $.getJSON("http://data.police.uk/api/crimes-street/all-crime?lat=" + $scope.result[1].data[0].Latitude + "&lng=" + $scope.result[1].data[0].Longitude + dateString, function (data) {
                     self.crimeData = data;
+
                     if (self.crimeData.length > 0) {
-                        console.log(crimeData);
+                        console.log(self.crimeData);
                         self.organiseData();
                         self.plotCrimes();
                         self.prepareDataSummary();
@@ -440,52 +485,12 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                     else {
                         console.log('No results for this location');
                     }
+                }, function () {
+                    console.log('Lookup failed. Try again');
                 });
+
             };
-
-//            function getLastUpdated() {
-//                var self = this;
-//                self.lastUpdated = {};
-//                $.getJSON("http://data.police.uk/api/crime-last-updated", function (data) {
-//                    self.lastUpdated.rawDate = new Date(data.date);
-//                    if (self.lastUpdated.rawDate !== 'Invalid Date') {
-//                        self.lastUpdated.curr_month_num = self.lastUpdated.rawDate.getMonth() + 1; //Months are zero based
-//                        self.lastUpdated.curr_year_num = self.lastUpdated.rawDate.getFullYear();
-//                    }
-//                    self.updateDropdown();
-//                });
-//            };
-//
-//            function updateDropdown() {
-//                var lastStaticMonth = 2;
-//                if (this.lastUpdated.curr_month_num > lastStaticMonth) {
-//                    var monthsToBuild = this.lastUpdated.curr_month_num - lastStaticMonth;
-//                    for (var i = 0; i < monthsToBuild; ++i) {
-//                        var genMonth = (+lastStaticMonth + i + 1);
-//                        if (genMonth < 10) {
-//                            genMonth = ('0' + genMonth);
-//                        }
-//                        $('#month').prepend('<option value="2015-' + genMonth + '">' + monthNames[+genMonth - 1] + ' 2015</option>');
-//                    }
-//                }
-//                $('#month')[0].selectedIndex = 0;
-//            };
-
-            function clearMarkers() {
-                for (var i = 0; i < this.markers.length; i++) {
-                    this.markers[i].setMap(null);
-                }
-                this.markers = new Array();
-            };
-
-            function setupListeners() {
-                var self = this;
-                $('#month').on('change', function () {
-                    self.getCrimeData($(this).val());
-                });
-            };
-
-            function organiseData() {
+            CrimeMap.prototype.organiseData = function () {
                 this.crimes = {};
                 for (var i = 0; i < this.crimeData.length; ++i) {
                     if (!this.crimes[this.crimeData[i].location.latitude]) {
@@ -497,8 +502,7 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                     }
                 }
             };
-
-            function prepareDataSummary() {
+            CrimeMap.prototype.prepareDataSummary = function () {
                 var self = this
                     , mostCommonCrime;
                 $('#no-of-crimes').text(this.crimeData.length);
@@ -508,12 +512,11 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                 this.buildPie();
                 mostCommonCrime = mostCommonCrime[0].replace(/\-/g, '');
                 $('#crime-type').text(categories[mostCommonCrime].name).css('color', categories[mostCommonCrime].tooltip);
-                if (!this.isMobile()) {
-                    $('#details').show();
-                }
+                // if (!this.isMobile()) {
+                //     $('#details').show();
+                // }
             };
-
-            function buildPie() {
+            CrimeMap.prototype.buildPie = function () {
                 var data = []
                     , i, width = 200
                     , height = 200
@@ -545,13 +548,12 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                 g.append("text").attr("transform", function (d) {
                     return "translate(" + arc.centroid(d) + ")";
                 }).attr("dy", ".35em").style("text-anchor", "middle");
-                if (!this.isMobile()) {
-                    $('#chart').show();
-                }
+                // if (!this.isMobile()) {
+                //     $('#chart').show();
+                // }
                 this.buildKey();
             };
-
-            function getCircle(size, cat) {
+            CrimeMap.prototype.getCircle = function (size, cat) {
                 size = size + 4;
                 var colour = categories[cat.replace(/\-/g, '')];
                 var circle = {
@@ -564,8 +566,7 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                 };
                 return circle;
             };
-
-            function buildKey() {
+            CrimeMap.prototype.buildKey = function () {
                 var key = $('<ul id="key"></ul>')
                     , listItem;
                 for (var i in this.categories) {
@@ -575,7 +576,7 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                 $('#chart').append(key);
             };
             /* This method should definitely not be doing so much - it should be refactored */
-            function plotCrimes() {
+            CrimeMap.prototype.plotCrimes = function () {
                 var crimes = this.crimes
                     , i, j, p, outcome, marker, self = this
                     , size, loc, list, crimeType, categoriesCurr, curr, co, mode, ev, point, infowindow;
@@ -642,8 +643,7 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                     this.panAndZoom();
                 }
             };
-
-            function buildLocationCrimeList(modeList, ordered) {
+            CrimeMap.prototype.buildLocationCrimeList = function (modeList, ordered) {
                 var i, list = ''
                     , currentCat, singlePlural = 's';
                 for (i = 0; i < ordered.length; ++i) {
@@ -653,15 +653,19 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                 }
                 return '<ul>' + list + '</ul>';
             };
-
-            function bubbleChart(marker) {
+            CrimeMap.prototype.bubbleChart = function (marker) {
                 var svg = d3.select().append("svg").attr("width", 300).attr("height", 300).attr("class", "bubble");
             };
-
-            function panAndZoom() {
-                var ltln = new google.maps.LatLng(this.lat, this.lng);
+            CrimeMap.prototype.panAndZoom = function () {
+                var ltln = new google.maps.LatLng($scope.result[1].data[0].Latitude, $scope.result[1].data[0].Longitude);
                 this.map.panTo(ltln);
                 this.map.setZoom(15);
+            };
+            CrimeMap.prototype.showLoader = function () {
+                $('.loading').show();
+            };
+            CrimeMap.prototype.hideLoader = function () {
+                $('.loading').hide();
             };
             var monthNames = [
         "Jan", "Feb", "Mar"
