@@ -398,40 +398,37 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                 this.latLong = {};
                 this.markers = [];
                 this.crimeData = {};
-
                 this.renderMap();
                 this.getCrimeData();
-                // this.setupListeners();
-                // this.getLastUpdated();
-
-
+                this.setupListeners();
+                this.getLastUpdated();
             };
-            // CrimeMap.prototype.getLastUpdated = function () {
-            //     var self = this;
-            //     this.lastUpdated = {};
-            //     $.getJSON("http://data.police.uk/api/crime-last-updated", function (data) {
-            //         self.lastUpdated.rawDate = new Date(data.date);
-            //         if (self.lastUpdated.rawDate !== 'Invalid Date') {
-            //             self.lastUpdated.curr_month_num = self.lastUpdated.rawDate.getMonth() + 1; //Months are zero based
-            //             self.lastUpdated.curr_year_num = self.lastUpdated.rawDate.getFullYear();
-            //         }
-            //         self.updateDropdown();
-            //     });
-            // };
-            // CrimeMap.prototype.updateDropdown = function () {
-            //     var lastStaticMonth = 2;
-            //     if (this.lastUpdated.curr_month_num > lastStaticMonth) {
-            //         var monthsToBuild = this.lastUpdated.curr_month_num - lastStaticMonth;
-            //         for (var i = 0; i < monthsToBuild; ++i) {
-            //             var genMonth = (+lastStaticMonth + i + 1);
-            //             if (genMonth < 10) {
-            //                 genMonth = ('0' + genMonth);
-            //             }
-            //             $('#month').prepend('<option value="2015-' + genMonth + '">' + monthNames[+genMonth - 1] + ' 2015</option>');
-            //         }
-            //     }
-            //     $('#month')[0].selectedIndex = 0;
-            // };
+            CrimeMap.prototype.getLastUpdated = function () {
+                var self = this;
+                this.lastUpdated = {};
+                $.getJSON("http://data.police.uk/api/crime-last-updated", function (data) {
+                    self.lastUpdated.rawDate = new Date(data.date);
+                    if (self.lastUpdated.rawDate !== 'Invalid Date') {
+                        self.lastUpdated.curr_month_num = self.lastUpdated.rawDate.getMonth() + 1; //Months are zero based
+                        self.lastUpdated.curr_year_num = self.lastUpdated.rawDate.getFullYear();
+                    }
+                    self.updateDropdown();
+                });
+            };
+            CrimeMap.prototype.updateDropdown = function () {
+                var lastStaticMonth = 2;
+                if (this.lastUpdated.curr_month_num > lastStaticMonth) {
+                    var monthsToBuild = this.lastUpdated.curr_month_num - lastStaticMonth;
+                    for (var i = 0; i < monthsToBuild; ++i) {
+                        var genMonth = (+lastStaticMonth + i + 1);
+                        if (genMonth < 10) {
+                            genMonth = ('0' + genMonth);
+                        }
+                        $('#month').prepend('<option value="2015-' + genMonth + '">' + monthNames[+genMonth - 1] + ' 2015</option>');
+                    }
+                }
+                $('#month')[0].selectedIndex = 0;
+            };
             //Render the initial map on the River Thames - ala Eastenders intro
             CrimeMap.prototype.renderMap = function () {
                 var eastenders = new google.maps.LatLng('51.5150', '0.0300');
@@ -454,14 +451,13 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                 }
                 this.markers = new Array();
             };
-            // CrimeMap.prototype.setupListeners = function () {
-            //     var self = this;
-            //
-            //     $('#month').on('change', function () {
-            //         self.getCrimeData($(this).val());
-            //     });
-            //     //                $("input:text:visible:first").focus();
-            // };
+            CrimeMap.prototype.setupListeners = function () {
+                var self = this;
+                $('#month').on('change', function () {
+                    self.getCrimeData($(this).val());
+                });
+                //                $("input:text:visible:first").focus();
+            };
             CrimeMap.prototype.getCrimeData = function (date) {
                 var dateString = ''
                     , self = this;
@@ -475,7 +471,6 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                 // this.showLoader();
                 $.getJSON("http://data.police.uk/api/crimes-street/all-crime?lat=" + $scope.result[1].data[0].Latitude + "&lng=" + $scope.result[1].data[0].Longitude + dateString, function (data) {
                     self.crimeData = data;
-
                     if (self.crimeData.length > 0) {
                         console.log(self.crimeData);
                         self.organiseData();
@@ -488,7 +483,6 @@ angular.module('clientApp').config(['$httpProvider', function ($httpProvider) {
                 }, function () {
                     console.log('Lookup failed. Try again');
                 });
-
             };
             CrimeMap.prototype.organiseData = function () {
                 this.crimes = {};
