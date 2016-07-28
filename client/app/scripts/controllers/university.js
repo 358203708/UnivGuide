@@ -9,7 +9,7 @@
 angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
   $httpProvider.defaults.useXDomain = true;
   delete $httpProvider.defaults.headers.common['X-Requested-With'];
-}]).controller('UniversityCtrl', function($scope, $http, $q, $sce, algolia, NgMap) {
+}]).controller('UniversityCtrl', function($scope, $http, $q, $sce, algolia, $window) {
   /*Citycontext widget*/
   //    citycontextUI.config.mapboxMapId = 'rentable.4c1de95f';
   //    citycontextUI.config.mapboxToken = 'pk.eyJ1IjoicmVudGFibGUiLCJhIjoiNnFqUXgzUSJ9.xh6htS8Vscyxyf89mCSn6Q';
@@ -84,17 +84,75 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
       //            $scope.courseStat = $scope.result[1].data[1];
       console.log($scope.courseInfo);
       console.log($scope.courseLoc);
+
       //             console.log($scope.courseStat);
+
+      $scope.universityInfo = [];
+      $scope.universityInfo.push($scope.result[1].data[0].Latitude, $scope.result[1].data[0].Longitude, $scope.result[1].data[0].Name, $scope.result[0].data.Title, $scope.result[0].data.KisMode, $scope.result[0].data.CoursePageUrl);
       /*Course Location Maps*/
-      NgMap.getMap().then(function(map) {
-        $scope.map = map;
-        $scope.universityInfo = [];
-        $scope.universityInfo.push($scope.result[1].data[0].Latitude, $scope.result[1].data[0].Longitude, $scope.result[1].data[0].Name, $scope.result[0].data.Title, $scope.result[0].data.KisMode, $scope.result[0].data.CoursePageUrl);
-        // console.log($scope.universityInfo);
-        //                transportWidget.queryByLatLon($scope.universityInfo[0] + ',' + $scope.universityInfo[1]);
-        //                criminalityWidget.queryByLatLon($scope.universityInfo[0] + ',' + $scope.universityInfo[1]);
-        //                demographicsWidget.queryByLatLon($scope.universityInfo[0] + ',' + $scope.universityInfo[1]);
+      //   NgMap.getMap().then(function(map) {
+      //     $scope.map = map;
+      //     $scope.universityInfo = [];
+      //     $scope.universityInfo.push($scope.result[1].data[0].Latitude, $scope.result[1].data[0].Longitude, $scope.result[1].data[0].Name, $scope.result[0].data.Title, $scope.result[0].data.KisMode, $scope.result[0].data.CoursePageUrl);
+      //     // console.log($scope.universityInfo);
+      //     //                transportWidget.queryByLatLon($scope.universityInfo[0] + ',' + $scope.universityInfo[1]);
+      //     //                criminalityWidget.queryByLatLon($scope.universityInfo[0] + ',' + $scope.universityInfo[1]);
+      //     //                demographicsWidget.queryByLatLon($scope.universityInfo[0] + ',' + $scope.universityInfo[1]);
+      //   });
+
+      $(document).ready(function() {
+        initialize();
       });
+
+      function initialize() {
+        var myLatLng = {
+          lat: $scope.result[1].data[0].Latitude,
+          lng: $scope.result[1].data[0].Longitude
+        };
+
+        console.log(myLatLng);
+        // Create a map object and specify the DOM element for display.
+        var locationMap = new google.maps.Map(document.getElementById('locationMap'), {
+          center: myLatLng,
+          scrollwheel: false,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          mapTypeControl: true,
+          disableDefaultUI: false,
+          zoomControl: true,
+          zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.LARGE,
+            position: google.maps.ControlPosition.RIGHT_BOTTOM
+          }
+        });
+
+        // Create a marker and set its position.
+        var marker = new google.maps.Marker({
+
+          position: myLatLng,
+          //   animation: google.maps.Animation.BOUNCE
+        });
+
+        marker.setMap(locationMap);
+
+        var contentString = '<div id="bodyContent">' +
+          '<p> ' + '<b>Location:</b> ' + $scope.name +'/ '+ $scope.universityInfo[2]+ '</p>'+'<p>'+'<b> Course: </b> ' + $scope.universityInfo[3] + '</p>'+'<p>'+' <b> Mode: </b> ' + $scope.universityInfo[4] + '</p>'+'<p>'+' <b> Course Page: </b> ' + '<a href="{{universityInfo[5]}}" target="_blank">' +$scope.universityInfo[5]+
+          '</a>' + ' </p>' +
+          ' </div>'
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.open(locationMap, marker);
+        });
+// infowindow.open(locationMap, marker);
+      };
+
+
+
+
+
+
       /*Course statistics visualisation*/
       var chartSeries = [];
       /*Weather forecast visualisation*/
@@ -434,6 +492,9 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
             position: google.maps.ControlPosition.RIGHT_BOTTOM
           }
         });
+
+
+
       };
       CrimeMap.prototype.clearMarkers = function() {
         for (var i = 0; i < this.markers.length; i++) {
@@ -565,7 +626,7 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
           size, loc, list, crimeType, categoriesCurr, curr, co, mode, ev, point, infowindow;
         this.categories = {};
         this.clearMarkers();
-        this.hideLoader();
+        // this.hideLoader();
         for (i in crimes) {
           mode = {};
           size = crimes[i].length;
@@ -641,12 +702,12 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
         this.map.panTo(ltln);
         this.map.setZoom(15);
       };
-      CrimeMap.prototype.showLoader = function() {
-        $('.loading').show();
-      };
-      CrimeMap.prototype.hideLoader = function() {
-        $('.loading').hide();
-      };
+      //   CrimeMap.prototype.showLoader = function() {
+      //     $('.loading').show();
+      //   };
+      //   CrimeMap.prototype.hideLoader = function() {
+      //     $('.loading').hide();
+      //   };
       var monthNames = [
         "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
       ];
