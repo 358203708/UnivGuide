@@ -207,7 +207,7 @@
                         /*Crime Map*/
 
                         #map_canvas {
-                          width: 1050px;
+                          width: 1080px;
                           height: 550px;
                         }
                         #map-control {
@@ -317,4 +317,11 @@
                         }
                         .infodiv h4 {
                           line-height: 24px;
+                        }
+
+
+                        /*Transport Map*/
+                        #transportMap {
+                          width: 1080px;
+                          height: 550px;
                         }

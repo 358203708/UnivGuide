@@ -73,17 +73,17 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
     then(function(response) {
       //   console.log(data);
       $scope.result = response;
-      console.log($scope.result);
-      console.log($scope.result[0].data);
-      console.log($scope.result[1].data[0]);
+      //   console.log($scope.result);
+      //   console.log($scope.result[0].data);
+      //   console.log($scope.result[1].data[0]);
       $scope.courseInfo = [];
       $scope.courseLoc = [];
       //   $scope.courseInfo.push($scope.result[0].data);
       $scope.courseInfo = $scope.result[0].data;
       $scope.courseLoc = $scope.result[1].data[0];
       //            $scope.courseStat = $scope.result[1].data[1];
-      console.log($scope.courseInfo);
-      console.log($scope.courseLoc);
+      //   console.log($scope.courseInfo);
+      //   console.log($scope.courseLoc);
 
       //             console.log($scope.courseStat);
 
@@ -101,16 +101,15 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
       //   });
 
       $(document).ready(function() {
-        initialize();
+        initializeLocationMap();
       });
 
-      function initialize() {
+      function initializeLocationMap() {
         var myLatLng = {
           lat: $scope.result[1].data[0].Latitude,
           lng: $scope.result[1].data[0].Longitude
         };
-
-        console.log(myLatLng);
+        // console.log(myLatLng);
         // Create a map object and specify the DOM element for display.
         var locationMap = new google.maps.Map(document.getElementById('locationMap'), {
           center: myLatLng,
@@ -128,15 +127,16 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
 
         // Create a marker and set its position.
         var marker = new google.maps.Marker({
-
-          position: myLatLng,
-          //   animation: google.maps.Animation.BOUNCE
+          map: locationMap,
+          position: myLatLng
+            //   setMap: locationMap
+            //   animation: google.maps.Animation.BOUNCE
         });
 
-        marker.setMap(locationMap);
+
 
         var contentString = '<div id="bodyContent">' +
-          '<p> ' + '<b>Location:</b> ' + $scope.name +'/ '+ $scope.universityInfo[2]+ '</p>'+'<p>'+'<b> Course: </b> ' + $scope.universityInfo[3] + '</p>'+'<p>'+' <b> Mode: </b> ' + $scope.universityInfo[4] + '</p>'+'<p>'+' <b> Course Page: </b> ' + '<a href="{{universityInfo[5]}}" target="_blank">' +$scope.universityInfo[5]+
+          '<p> ' + '<b>Location:</b> ' + $scope.name + '/ ' + $scope.universityInfo[2] + '</p>' + '<p>' + '<b> Course: </b> ' + $scope.universityInfo[3] + '</p>' + '<p>' + ' <b> Mode: </b> ' + $scope.universityInfo[4] + '</p>' + '<p>' + ' <b> Course Page: </b> ' + '<a href="{{universityInfo[5]}}" target="_blank">' + $scope.universityInfo[5] +
           '</a>' + ' </p>' +
           ' </div>'
         var infowindow = new google.maps.InfoWindow({
@@ -145,12 +145,8 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.open(locationMap, marker);
         });
-// infowindow.open(locationMap, marker);
+        // infowindow.open(locationMap, marker);
       };
-
-
-
-
 
 
       /*Course statistics visualisation*/
@@ -172,14 +168,14 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
         if (!d.list) {
           console.log(d);
         }
-        console.log(d);
+        // console.log(d);
         forecast = d.list;
         showForecastSmall();
         showHourlyForecastChart();
       }
 
       function showForecastDaily(d) {
-        console.log(d);
+        // console.log(d);
         daily = d.list;
         showDailyChart();
       };
@@ -523,7 +519,7 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
         $.getJSON("http://data.police.uk/api/crimes-street/all-crime?lat=" + $scope.result[1].data[0].Latitude + "&lng=" + $scope.result[1].data[0].Longitude + dateString, function(data) {
           self.crimeData = data;
           if (self.crimeData.length > 0) {
-            console.log(self.crimeData);
+            // console.log(self.crimeData);
             self.organiseData();
             self.plotCrimes();
             self.prepareDataSummary();
@@ -780,6 +776,220 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
       $(function() {
         new CrimeMap('map_canvas');
       });
+
+
+
+
+      /*Transport Map*/
+      //   $(document).ready(function() {
+      //     initializeTransportMap();
+      //   });
+
+      //   var infowindow;
+      //   var service;
+      //   var transportMap;
+      //
+
+      //   function initializeTransportMap() {
+      //
+      //     var transportLatLng = {
+      //       lat: $scope.result[1].data[0].Latitude,
+      //       lng: $scope.result[1].data[0].Longitude
+      //     };
+      //
+      //      transportMap = new google.maps.Map(document.getElementById('transportMap'), {
+      //
+      //       center: transportLatLng,
+      //       scrollwheel: false,
+      //       zoom: 15,
+      //       mapTypeId: google.maps.MapTypeId.ROADMAP,
+      //     //   mapTypeId: google.maps.MapTypeId.HYBRID,
+      //       mapTypeControl: true,
+      //       disableDefaultUI: false,
+      //       zoomControl: true,
+      //       zoomControlOptions: {
+      //         style: google.maps.ZoomControlStyle.LARGE,
+      //         position: google.maps.ControlPosition.RIGHT_BOTTOM
+      //       }
+      //     });
+      //
+      //     var request = {
+      //       location: transportLatLng,
+      //       radius: 5000,
+      //       types: ['train_station', 'bus_station', 'subway_station', 'transit_station','airport'，'grocery_or_supermarket','hospital','movie_theater','restaurant','shopping_center','park','night_club','pharmacy','police','embassy','shopping_mall']
+      //     };
+      //     infowindow = new google.maps.InfoWindow();
+      //     service = new google.maps.places.PlacesService(transportMap);
+      //     service.search(request, callback);
+      //   }
+      //
+      //   function callback(results, status) {
+      //     if (status == google.maps.places.PlacesServiceStatus.OK) {
+      //       for (var i = 0; i < results.length; i++) {
+      //         createMarker(results[i]);
+      //       }
+      //     }
+      //   }
+
+      //   function createMarker(place) {
+      //
+      //     var placeLoc = place.geometry.location;
+      //     var marker = new google.maps.Marker({
+      //       map: transportMap,
+      //       position: place.geometry.location,
+      //       icon: {
+      //         url: 'http://maps.gstatic.com/mapfiles/circle.png',
+      //         anchor: new google.maps.Point(10, 10),
+      //         scaledSize: new google.maps.Size(10, 17)
+      //       }
+      //     });
+      //
+      //
+      //     var content = '<strong style="font-size:1.2em">' + place.name + '</strong>' +
+      //       '<br/><strong>Type:</strong> ' + place.types[0] +
+      //       '<br/><strong>Rating:</strong> ' + (place.rating || 'n/a');
+      //     var more_content = '<img src=""/>';
+      //
+      //     //make a request for further details
+      //     service.getDetails({
+      //       reference: place.reference
+      //     }, function(place, status) {
+      //       if (status == google.maps.places.PlacesServiceStatus.OK) {
+      //         more_content = '<hr/><strong><a href="' + place.url + '" target="details">Details</a>';
+      //
+      //         if (place.website) {
+      //           more_content += '<br/><br/><strong><a href="' + place.website + '" target="details">' + place.website + '</a>';
+      //         }
+      //       }
+      //     });
+      //     console.log(place);
+      //
+      //     google.maps.event.addListener(marker, 'click', function() {
+      //
+      //       infowindow.setContent(content + more_content);
+      //       infowindow.open(transportMap, this);
+      //     });
+      //   }
+
+      var infowindow;
+      var service;
+      var transportMap;
+      var markersArray = [];
+      var options = ['train_station', 'bus_station', 'subway_station', 'transit_station', 'airport',
+        'grocery_or_supermarket', 'hospital', 'movie_theater', 'restaurant', 'shopping_center', 'park', 'night_club', 'pharmacy', 'police', 'embassy', 'shopping_mall'
+      ];
+
+      $(document).ready(function() {
+        initializeTransportMap();
+
+      });
+
+      function getLetteredIcon(letter) {
+        return "http://www.google.com/mapfiles/marker" + letter + ".png";
+      }
+
+      function initializeTransportMap() {
+        var transportLatLng = {
+          lat: $scope.result[1].data[0].Latitude,
+          lng: $scope.result[1].data[0].Longitude
+        };
+
+        transportMap = new google.maps.Map(document.getElementById('transportMap'), {
+
+          center: transportLatLng,
+          scrollwheel: false,
+          zoom: 15,
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          //   mapTypeId: google.maps.MapTypeId.HYBRID,
+          mapTypeControl: true,
+          disableDefaultUI: false,
+          zoomControl: true,
+          zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.LARGE,
+            position: google.maps.ControlPosition.RIGHT_BOTTOM
+          }
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        service = new google.maps.places.PlacesService(transportMap);
+
+
+        var defaultMarker = 'http://maps.google.com/mapfiles/kml/shapes/ranger_station.png';
+        var marker = new google.maps.Marker({
+          position: transportLatLng,
+          map: transportMap,
+          icon: defaultMarker,
+          title: 'Hello World!'
+        });
+        google.maps.event.addListenerOnce(transportMap, 'bounds_changed', performSearch);
+
+        for (var i = 0; i < options.length; i++) {
+          document.getElementById('options').innerHTML += '<input type="checkbox" id="' + options[i] + '" onclick="performSearch();"> <img src=' + getLetteredIcon(String.fromCharCode('A'.charCodeAt(0) + i)) + ' height="20" /> ' + options[i] + '<br>';
+        };
+
+      }
+
+      function performSearch() {
+        clearMaps();
+        var clickedOptions = [];
+        for (var i = 0; i < options.length; i++) {
+          if (document.getElementById(options[i]).checked) {
+            performTypeSearch(options[i], getLetteredIcon(String.fromCharCode('A'.charCodeAt(0) + i)));
+          }
+        }
+      }
+
+      function performTypeSearch(type, icon) {
+        var request = {
+          //   bounds: transportMap.getBounds(),
+          location: transportLatLng,
+          radius: 5000,
+          types: [type]
+        };
+        service.radarSearch(request, function(results, status) {
+          if (status != google.maps.places.PlacesServiceStatus.OK) {
+            alert(type + ":" + status);
+            return;
+          }
+          for (var i = 0, result; result = results[i]; i++) {
+            createMarker(result, icon);
+
+          }
+        });
+      }
+
+      function createMarker(place, icon) {
+        var marker = new google.maps.Marker({
+          map: transportMap,
+          position: place.geometry.location,
+          icon: icon
+
+        });
+        markersArray.push(marker);
+
+        google.maps.event.addListener(marker, 'click', function() {
+          service.getDetails(place, function(result, status) {
+            if (status != google.maps.places.PlacesServiceStatus.OK) {
+              alert(status);
+              return;
+            }
+            infoWindow.setContent(result.name);
+            infoWindow.open(transportMap, marker);
+          });
+        });
+      }
+
+      function clearMaps() {
+        for (var i = 0; i < markersArray.length; i++) {
+          markersArray[i].setMap(null);
+        }
+        markersArray.length = 0;
+      }
+
+
+
+
+
     });
   });
 });
