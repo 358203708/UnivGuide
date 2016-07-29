@@ -15,9 +15,36 @@
                           margin: 0px;
                           border-radius: 5px;
                           border: 3px solid #00aeef;
-                          width:1140px;
-                          height:400px;
+                          width: 1140px;
+                          height: 500px;
                           /*background-image: url(http://img.archiexpo.com/images_ae/photo-g/141377-8276726.jpg);*/
+                        }
+                        #panel-control {
+                            width: 20%;
+                            margin: 0 5%;
+                            left: 0;
+                            position: absolute;
+                            top: 0;
+                            z-index: 2;
+                        }
+                        #panel {
+                            background: white;
+        border: 2px solid #00aeef;
+        box-sizing: border-box;
+        clear: left;
+        display: inherit;
+        float: left;
+        font-family: inherit;
+        margin-top: 0;
+        padding: 5px 10px;
+        width: 100%;
+        width: 230px;
+        height: auto;
+        margin-top: 200px;
+        margin-left: -10px;
+                        }
+                        #output {
+                          font-size: inherit;
                         }
                         div .ranking {
                           /*padding: 10px;*/
@@ -261,7 +288,7 @@
                           clear: left;
                           display: inherit;
                           float: left;
-                          font-family: Georgia;
+                          font-family: inherit;
                           margin-top: 0;
                           padding: 5px 10px;
                           width: 100%;
@@ -318,9 +345,8 @@
                         .infodiv h4 {
                           line-height: 24px;
                         }
-
-
                         /*Transport Map*/
+
                         #transportMap {
                           width: 1080px;
                           height: 550px;

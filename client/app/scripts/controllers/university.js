@@ -104,17 +104,87 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
         initializeLocationMap();
       });
 
+      var mapCenter = {
+        lat: $scope.result[1].data[0].Latitude,
+        lng: $scope.result[1].data[0].Longitude
+      };
+
+
+
+      function CenterControl(controlDiv, map) {
+
+        // Set CSS for the control border.
+        var controlUI = document.createElement('div');
+        controlUI.style.backgroundColor = '#fff';
+        controlUI.style.border = '2px solid #fff';
+        controlUI.style.borderRadius = '3px';
+        controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
+        controlUI.style.cursor = 'pointer';
+        controlUI.style.marginBottom = '22px';
+        controlUI.style.textAlign = 'center';
+        controlUI.style.margin = '5px';
+        controlUI.title = 'Click to recenter the map';
+        controlDiv.appendChild(controlUI);
+
+        // Set CSS for the control interior.
+        var controlText = document.createElement('div');
+        controlText.style.color = '#00aeef';
+        controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
+        controlText.style.fontSize = '16px';
+        controlText.style.lineHeight = '38px';
+        controlText.style.paddingLeft = '5px';
+        controlText.style.paddingRight = '5px';
+        controlText.innerHTML = 'Center Map';
+        controlUI.appendChild(controlText);
+
+        // Setup the click event listeners: simply set the map to Chicago.
+        controlUI.addEventListener('click', function() {
+          map.setCenter(mapCenter);
+        });
+
+      };
+
+
+
       function initializeLocationMap() {
         var myLatLng = {
           lat: $scope.result[1].data[0].Latitude,
           lng: $scope.result[1].data[0].Longitude
         };
+
+        var bounds = new google.maps.LatLngBounds;
+        var markersArray = [];
+        var london = {
+          lat: 51.507351,
+          lng: -0.127758
+
+        };
+        var edinburgh = {
+          lat: 55.953252,
+          lng: -3.188267
+
+        };
+
+        var manchester = {
+          lat: 53.480759,
+          lng: -2.242631
+        };
+
+        var cardiff = {
+          lat: 51.481581,
+          lng: -3.17909
+        };
+
+        var destinationIcon = 'https://chart.googleapis.com/chart?' +
+          'chst=d_map_pin_letter&chld=D|FF0000|000000';
+        var originIcon = 'https://chart.googleapis.com/chart?' +
+          'chst=d_map_pin_letter&chld=O|FFFF00|000000';
         // console.log(myLatLng);
         // Create a map object and specify the DOM element for display.
         var locationMap = new google.maps.Map(document.getElementById('locationMap'), {
           center: myLatLng,
           scrollwheel: false,
-          zoom: 15,
+          zoom: 9,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           mapTypeControl: true,
           disableDefaultUI: false,
@@ -125,29 +195,104 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
           }
         });
 
+        var geocoder = new google.maps.Geocoder;
+
+        var service = new google.maps.DistanceMatrixService;
+
+        service.getDistanceMatrix({
+          origins: [myLatLng],
+          destinations: [london, edinburgh, manchester,cardiff],
+            travelMode: 'DRIVING',
+        //   travelMode: google.maps.DirectionsTravelMode.TRANSIT,
+
+          unitSystem: google.maps.UnitSystem.METRIC,
+          avoidHighways: false,
+          avoidTolls: false
+        }, function(response, status) {
+          if (status !== 'OK') {
+            alert('Error was: ' + status);
+          } else {
+            var originList = response.originAddresses;
+            var destinationList = response.destinationAddresses;
+            var outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = '';
+            deleteMarkers(markersArray);
+
+            var showGeocodedAddressOnMap = function(asDestination) {
+              var icon = asDestination ? destinationIcon : originIcon;
+              return function(results, status) {
+                if (status === 'OK') {
+                  locationMap.fitBounds(bounds.extend(results[0].geometry.location));
+                  markersArray.push(new google.maps.Marker({
+                    map: locationMap,
+                    position: results[0].geometry.location,
+                    icon: icon
+                  }));
+                } else {
+                  alert('Geocode was not successful due to: ' + status);
+                }
+              };
+            };
+
+            for (var i = 0; i < originList.length; i++) {
+              var results = response.rows[i].elements;
+              geocoder.geocode({
+                  'address': originList[i]
+                },
+                showGeocodedAddressOnMap(false));
+              for (var j = 0; j < results.length; j++) {
+                geocoder.geocode({
+                    'address': destinationList[j]
+                  },
+                  showGeocodedAddressOnMap(true));
+                // outputDiv.innerHTML += '<div>''</div>'originList[i] + ' to ' + destinationList[j] +
+                //   ': ' + results[j].distance.text + ' in ' +
+                //   results[j].duration.text + '<br>';
+                outputDiv.innerHTML += '<div>'+ ' To ' + '<strong>'+destinationList[j]+'</strong>' +
+                  ': ' + results[j].distance.text + ' in ' +
+                  results[j].duration.text + '<br><br>'+'</div>';
+              }
+            }
+          }
+        });
+
+        // Create the DIV to hold the control and call the CenterControl()
+        // constructor passing in this DIV.
+        var centerControlDiv = document.createElement('div');
+        var centerControl = new CenterControl(centerControlDiv, locationMap);
+        centerControlDiv.index = 1;
+        locationMap.controls[google.maps.ControlPosition.TOP_CENTER].push(centerControlDiv);
+
+
         // Create a marker and set its position.
-        var marker = new google.maps.Marker({
-          map: locationMap,
-          position: myLatLng
-            //   setMap: locationMap
-            //   animation: google.maps.Animation.BOUNCE
-        });
+        // var marker = new google.maps.Marker({
+        //   map: locationMap,
+        //   position: myLatLng
+        //     //   setMap: locationMap
+        //     //   animation: google.maps.Animation.BOUNCE
+        // });
 
 
 
-        var contentString = '<div id="bodyContent">' +
-          '<p> ' + '<b>Location:</b> ' + $scope.name + '/ ' + $scope.universityInfo[2] + '</p>' + '<p>' + '<b> Course: </b> ' + $scope.universityInfo[3] + '</p>' + '<p>' + ' <b> Mode: </b> ' + $scope.universityInfo[4] + '</p>' + '<p>' + ' <b> Course Page: </b> ' + '<a href="{{universityInfo[5]}}" target="_blank">' + $scope.universityInfo[5] +
-          '</a>' + ' </p>' +
-          ' </div>'
-        var infowindow = new google.maps.InfoWindow({
-          content: contentString
-        });
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.open(locationMap, marker);
-        });
+        // var contentString = '<div id="bodyContent">' +
+        //   '<p> ' + '<b>Location:</b> ' + $scope.name + '/ ' + $scope.universityInfo[2] + '</p>' + '<p>' + '<b> Course: </b> ' + $scope.universityInfo[3] + '</p>' + '<p>' + ' <b> Mode: </b> ' + $scope.universityInfo[4] + '</p>' + '<p>' + ' <b> Course Page: </b> ' + '<a href="{{universityInfo[5]}}" target="_blank">' + $scope.universityInfo[5] +
+        //   '</a>' + ' </p>' +
+        //   ' </div>'
+        // var infowindow = new google.maps.InfoWindow({
+        //   content: contentString
+        // });
+        // google.maps.event.addListener(marker, 'click', function() {
+        //   infowindow.open(locationMap, marker);
+        // });
         // infowindow.open(locationMap, marker);
       };
 
+      function deleteMarkers(markersArray) {
+        for (var i = 0; i < markersArray.length; i++) {
+          markersArray[i].setMap(null);
+        }
+        markersArray = [];
+      }
 
       /*Course statistics visualisation*/
       var chartSeries = [];
