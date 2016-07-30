@@ -54,7 +54,8 @@
                           /*background-image: url(http://img.archiexpo.com/images_ae/photo-g/141377-8276726.jpg);*/
                         }
                         div.dataTables_wrapper {
-                          padding: 20px;
+                            padding: 10px;
+       font-size: 0.75em;
                         }
                         div .description {
                           padding: 20px;

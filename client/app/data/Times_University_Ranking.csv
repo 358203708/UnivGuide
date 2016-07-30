@@ -1,0 +1,128 @@
+Rank,Last Year Rank,University,Teaching quality (%),Student experience (%),Research quality (%),Entry standards (Ucas pts),Graduate prospects (%),Firsts/2:1s (%),Completion rate (%),Student-staff ratio,Services/ facilities spend (pounds),Total
+1,1,University of Cambridge,83.8,86.3,57.3,602,89.3,89.3,98.4,11.3,3432,1000
+2,1,University of Oxford,83.1,86.8,53.1,573,87.1,92.1,96.3,10.6,3229,974
+3,4,Imperial College London,79.8,87.8,56.2,568,91.1,87.3,96.5,11.3,2974,886
+4,3,University of St Andrews,83.2,86.8,40.4,517,83.3,89.6,95.3,11.4,2572,876
+5,6,Durham University,81.9,86.7,39,523,84.4,87.4,96.6,14.9,2648,860
+6,8,University of Warwick,79.6,85,44.6,482,79.8,82.3,96.7,12.6,2505,813
+7,7,University of Exeter,82.6,87.7,38,463,79.8,84.1,95.7,15.6,2559,810
+8,11,University of Surrey,86.9,90.3,29.7,424,78.8,78.9,92.2,13.7,2487,805
+9,5,London School of Economics and Political Science,72.1,78.4,52.8,533,78.5,82.1,94.8,11.4,2584,802
+10,9,University College London,74.2,81.3,51,502,83.1,87.9,94.6,10.3,2608,800
+11,12,Lancaster University,82.3,85.4,39.1,436,82.5,76.9,93.5,13.7,2566,799
+12,10,University of Bath,82.7,87,37.3,479,85.2,84.1,96.1,16.2,2023,792
+13,13,Loughborough University,84.5,89.3,36.3,397,83.7,79.8,93.2,14.7,2339,791
+14,17,University of Leeds,83.7,88,36.8,431,78.4,82.2,93.5,13.6,2418,779
+15,16,University of York,81.7,86.6,38.3,437,76,81.6,94.3,14.7,2163,756
+16,18,University of Southampton,79.3,86.5,44.9,411,78.1,80.4,92.5,12,2221,755
+17,15,University of Birmingham,80.8,84.2,37.1,426,86.7,84.4,94.8,15.5,2461,751
+18,14,University of East Anglia,83.2,88.8,35.8,408,70.3,78.8,91.9,13.7,2378,743
+19,25,University of Sussex,78.6,85,31.8,386,84.1,78.6,92.9,15.5,2618,738
+20,19,University of Bristol,75.5,81.5,47.3,487,79.6,86.3,96.6,13.7,1976,720
+21,21,University of Sheffield,81.3,87.2,37.6,428,75.7,80.4,94.4,14.9,2031,718
+22,22,University of Edinburgh,74.5,82.4,43.8,484,78.6,83,91.3,12.2,2052,716
+23,30,University of Kent,81.5,85.4,35.2,363,76.7,80,90.7,12.9,1513,713
+23,22,Newcastle University,82,88.4,37.7,424,79.1,79.2,95.1,15.6,1807,713
+25,22,University of Nottingham,79.5,83.9,37.8,428,81.3,79.3,93.2,14,2055,710
+26,26,University of Glasgow,80,86.9,39.9,470,79.3,77.8,88.4,14.7,2142,704
+27,29,King's College London,73.9,79.7,44,455,85.7,83.2,92.8,11.3,2198,699
+28,20,University of Leicester,77.5,84.4,31.8,386,72.1,78.3,92.5,12.2,2600,695
+28,28,University of Manchester,79,84.7,39.8,435,78.5,75.7,92.9,13.2,1926,695
+30,34,Aston University Birmingham,83.3,87.9,25.8,369,78.8,75.1,90.9,15.5,1997,693
+31,38,"Queen's University, Belfast",81.6,87.3,39.7,385,78.7,75.8,91,14.9,1996,688
+32,33,University of Reading,80.5,85.8,36.5,373,70.3,76.2,92.3,14.1,1900,687
+33,27,Cardiff University,80.7,86,35,426,80.1,77.8,93.4,14.2,1638,685
+34,37,"Queen Mary, University of London",80.5,83.3,37.9,411,73.3,75.3,91.2,12.2,2347,681
+35,32,University of Essex,83.7,88,37.2,313,64.1,68.9,85.6,15.1,2574,674
+36,34,"Royal Holloway, University of London",82.6,84.1,36.3,398,62.7,75.9,92.3,15.3,1665,673
+37,45,University of Dundee,84.4,87.1,31.2,410,80,76.1,86,13.9,1545,669
+38,48,University of Buckingham,88,88.4,31.5,304,83.4,50.7,86.3,10.5,1972,663
+38,41,Heriot-Watt University,80.8,84.2,36.7,413,78.1,72,87.4,16.9,2120,663
+38,36,University of Liverpool,77.9,83.4,31.5,404,76.1,75.4,91.3,11.8,2217,663
+41,46,City University,82.7,85.6,21.4,379,78.9,73.8,86,16.1,2368,661
+41,43,Swansea University,82.6,86.5,33.7,326,81.4,74.4,89.7,15.3,1787,661
+43,40,Keele University,87,90.2,22.1,358,76.1,68.4,90.8,13.9,1273,653
+44,31,Soas,75.2,80.8,27.9,407,68.3,82.9,80.7,10.9,2135,648
+45,44,University of Aberdeen,77.4,83.7,29.9,446,76.2,77.1,84.1,13.4,2107,640
+46,39,University of Strathclyde,76.2,85.6,37.7,476,72,77.9,87.6,19.3,1872,637
+47,42,Coventry University,87.6,89.3,3.8,310,74.2,67.4,85.8,14.6,1732,622
+48,,"St George's, University of London",78.7,81.6,22.2,418,93.4,70.4,92.7,12.9,4034,620
+49,63,Harper Adams University,82.6,89.3,5.7,331,73.3,58.3,90.6,17.9,2077,607
+50,53,University of Stirling,78.7,82.3,30.5,375,73.3,67.9,85.7,15,1665,596
+51,,Royal Agricultural University,79.3,85.6,1.1,307,69.7,62.6,96.3,20.9,2887,592
+52,50,Bangor University,85.8,87.8,27.2,321,67.7,64.1,81.8,16.5,1387,589
+53,54,De Montfort University,82.4,84.6,8.9,307,76.9,70.9,86.5,18.7,1924,584
+54,52,Nottingham Trent University,83.6,85.8,6.5,310,67.6,69.2,89.6,17,1812,582
+55,49,Oxford Brookes University,83.2,85.7,11.4,348,69.2,71.1,89.4,17.6,1429,576
+56,51,Falmouth University,83.7,83.5,4.6,309,74.5,72,85.4,21.5,1755,573
+57,69,Ulster University,82.9,87,31.8,306,63.6,66.5,82.3,16.2,1710,572
+58,70,Bath Spa University,85.8,85.8,7.9,318,55.1,74.5,89.9,19,1517,571
+59,57,University of Portsmouth,83.4,85.9,8.6,310,66.9,72.7,87.6,16.5,1617,569
+60,47,Brunel University London,78.2,83.8,25.4,352,63.4,68.8,87.7,16.4,1904,568
+61,,Norwich University of the Arts,83.8,83.5,5.6,357,63.4,70.5,88.7,17.8,1236,564
+62,74,University for the Creative Arts,82.7,81.5,3.4,332,52,60.4,85.8,11.7,2122,563
+62,60,University of Lincoln,81.1,84.6,10.3,335,70.7,65,87.6,18,1665,563
+64,66,Northumbria University,82.9,85.1,9,363,66.3,67.6,87.6,17.8,1484,556
+64,61,University of Winchester,84.2,85,5.8,307,60.7,75.5,85.2,16.9,1226,556
+66,55,"Goldsmiths, University of London",76.6,76.3,33.4,360,56,81.4,82.4,14.8,1319,550
+67,58,University of Hull,80,83.8,16.7,332,66.7,71.2,86,17.3,1698,542
+68,72,Edge Hill University,83.2,83.5,4.9,319,63.8,65.8,86.2,15.7,1809,539
+69,65,University of Chichester,84,85.3,6.4,310,57.5,69.3,89.9,17.4,1194,534
+69,77,University of Huddersfield,82.2,84,9.4,333,74.1,64.1,83,17.8,1551,534
+69,64,Robert Gordon University,80.6,83.5,4,385,83.1,67,83.4,19.4,1335,534
+72,62,Sheffield Hallam University,80.9,83.9,5.4,319,64.7,65.7,86.9,17.1,1932,529
+73,68,University of the West of England,80,82.5,8.8,324,70.8,71.4,84.9,19.5,1931,527
+74,71,Liverpool John Moores University,81.6,85,8.9,344,63.3,74.9,84.2,18.4,1332,525
+75,76,University of Bradford,78.8,84.4,9.2,314,75.2,74,83.8,17.8,1731,523
+76,79,University of Hertfordshire,78.6,82.8,5.6,318,75.3,67,86,17.7,1964,522
+77,89,Manchester Metropolitan University,81,82.2,7.5,347,63,69.8,84.4,17.7,1516,520
+78,73,Roehampton University,78,79.9,24.5,286,60.9,67.2,81.7,16.8,2207,519
+79,93,Aberystwyth University,78.4,80.4,28.1,312,62.5,65.1,89.3,17.8,1386,517
+79,,Liverpool Hope University,86.8,86.4,9.2,304,53.9,63.4,82.8,19.4,1667,517
+81,59,Arts University Bournemouth,81.4,80,2.4,322,61.4,66.2,92.3,15.3,684,514
+82,88,Bournemouth University,75.2,78.8,9,329,66.4,75.5,86,17.4,1831,513
+82,56,University of Northampton,82.3,84.1,3.2,283,60.7,64.5,85,20.3,2387,513
+84,81,University of Derby,84.4,85.3,2.5,290,60,62.7,83.7,15.4,1540,512
+85,75,Middlesex University,78.7,81.8,9.7,270,64.9,61.3,77.8,18.5,2967,500
+85,80,Plymouth University,82.3,84.1,15.9,312,60.2,67,84.8,17.5,1424,500
+87,67,University of Chester,82.7,83.7,4.1,299,63.6,63.4,80.5,16.4,1714,497
+88,83,University of Gloucestershire,79.8,82.6,3.8,317,55.7,72.4,86.3,19.7,1720,496
+89,87,York St John University,82.4,83,4.1,292,65.3,65.4,90.4,20.6,1284,494
+90,82,University of Brighton,78.6,80.9,7.9,321,66.9,68.2,86.9,17.1,1357,491
+91,91,Leeds Trinity University,83.5,82.3,2,284,65.8,68.9,81.7,21.7,1470,487
+92,77,University of Central Lancashire,80.4,83.5,5.6,315,62.4,60,81.6,17.1,2052,481
+93,97,Edinburgh Napier University,80.2,83.7,4.6,347,69.1,71.4,81.2,20.3,1155,478
+94,84,Glasgow Caledonian University,77,82.5,7,372,70.2,70.1,83.2,21.2,1545,477
+95,101,Staffordshire University,81.8,82.8,16.5,274,58.4,63.2,78.4,16.8,1620,475
+96,86,Queen Margaret University Edinburgh,78.9,82.3,6.6,341,59.6,74.2,82.4,19.1,1336,474
+97,106,Abertay University,80,83.1,5.1,338,65.6,70.4,75.5,21.4,1563,466
+98,105,University of Salford,80.1,80.9,8.3,334,59.5,65.2,79.5,17,1646,465
+99,85,University of the Arts London,75.9,74.5,8,320,59.2,61.8,85.5,15.1,1711,464
+100,100,"St Mary's University, Twickenham",80.5,84.8,4,289,66.7,63.8,83.7,20.6,1069,463
+100,107,University of Worcester,81.4,84.5,4.3,301,63.9,61.9,85.8,19,1062,463
+102,94,Teesside University,82.9,84.3,3.6,306,59.8,59.3,80.8,17.7,1676,456
+103,90,Cardiff Metropolitan University,79.1,81.8,3.9,317,59.8,60.6,82.2,19,1712,454
+104,99,University of Sunderland,82.5,84.2,5.8,294,62.3,49.5,81.4,19.6,1484,446
+105,91,Birmingham City University,78,79.3,4.3,300,64.8,67.3,84.4,20.4,1693,444
+106,98,University of Greenwich,79.2,82.4,4.9,315,58.2,62.9,84.7,19.6,1479,443
+107,96,Canterbury Christ Church University,80.7,81.9,4.5,279,57.8,66.5,82.3,18.4,1212,438
+108,110,Anglia Ruskin University,82.5,83.9,5.4,254,65,58.4,79.3,19,1419,428
+109,116,Buckinghamshire New University,81.5,81.1,1.5,257,57.6,57,82.5,21.8,1997,421
+110,108,University of Bedfordshire,80.4,82.7,7,229,58.3,56.6,80.1,18.3,1721,419
+111,117,Kingston University,76.1,79.9,5.1,299,60.7,67.4,82.2,19.3,1637,418
+112,102,Bishop Grosseteste University,80.9,80.6,2.1,284,69.1,60.4,90,28.6,743,412
+112,114,University of South Wales,77.5,78.3,4,322,59,63.6,81.7,19.6,1425,412
+114,111,Leeds Beckett University,78.5,82.7,4.1,288,58.5,61.8,78.8,20.7,1341,408
+115,104,"Newman University, Birmingham",83.1,84.6,2.8,293,54.6,56,73.3,18.9,1458,401
+115,115,Southampton Solent University,79.5,82.1,0.5,276,54.6,60.2,76.8,18.3,1480,401
+115,112,University of Westminster,72.9,80.6,9.8,311,55.1,68.8,80.4,19.9,1491,401
+118,118,University of the West of Scotland,81.8,81.8,4.3,305,65.7,63.2,70,21.1,1291,395
+119,95,University of Cumbria,76.9,77.6,1.2,299,64.9,64.7,85.7,22.3,1093,392
+120,122,London South Bank University,77,81.3,9,248,67.9,61,74.6,17.2,1523,386
+121,109,University of West London,76.9,77.5,1.6,259,60.5,58.8,73.9,17.3,2214,385
+122,113,Glyndwr University,80.5,79.3,2.3,257,66.3,53.6,75.8,23.3,1757,374
+123,120,University of Bolton,81.6,80.8,2.9,287,60.1,54.9,71.2,17.9,959,370
+123,102,"University of St Mark & St John, Plymouth",76.3,77.3,n/a,319,60.4,58.8,82.6,21.2,1250,370
+125,123,London Metropolitan University,76,78.6,3.5,239,47.7,55.1,75.3,19.6,1000,287
+126,121,University of the Highlands and Islands,78.8,76.5,n/a,272,56,57.9,68.6,n/a,558,276
+127,119,University of East London,75,78.5,7.2,281,45.6,53.9,67.5,23.6,1636,269

@@ -618,7 +618,7 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
         }
         $('#month')[0].selectedIndex = 0;
       };
-      //Render the initial map 
+      //Render the initial map
       CrimeMap.prototype.renderMap = function() {
 
         var myLatLng = new google.maps.LatLng( $scope.result[1].data[0].Latitude, $scope.result[1].data[0].Longitude);
