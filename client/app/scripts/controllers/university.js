@@ -618,11 +618,12 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
         }
         $('#month')[0].selectedIndex = 0;
       };
-      //Render the initial map on the River Thames - ala Eastenders intro
+      //Render the initial map 
       CrimeMap.prototype.renderMap = function() {
-        var eastenders = new google.maps.LatLng('51.5150', '0.0300');
+
+        var myLatLng = new google.maps.LatLng( $scope.result[1].data[0].Latitude, $scope.result[1].data[0].Longitude);
         this.map = new google.maps.Map(document.getElementById(this.domId), {
-          center: eastenders,
+          center: myLatLng,
           zoom: 13,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
           mapTypeControl: false,
