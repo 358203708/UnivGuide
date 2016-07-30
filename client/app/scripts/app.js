@@ -27,7 +27,7 @@
 //    });
 //});
 angular.module('clientApp', [
-    'ngRoute', 'ngSanitize', 'restangular', 'ngTable', 'algoliasearch', 'algolia.autocomplete', 'ngMap', 'ui.bootstrap'
+    'ngRoute', 'ngSanitize', 'restangular', 'ngTable', 'algoliasearch', 'algolia.autocomplete', 'ui.bootstrap'
   , 'angucomplete-alt']).config(function ($routeProvider, RestangularProvider) {
     $routeProvider.when('/', {
         templateUrl: 'views/university.html'

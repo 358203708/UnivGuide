@@ -6,320 +6,443 @@
 <!--<![endif]-->
 
 <head>
-    <!--
+  <!--
 <link rel="stylesheet" href="style/algolia.css">
 <link rel="stylesheet" href="style/university.css">
 <link rel="stylesheet" href="style/citycontext-ui.css">
 <link rel="stylesheet" href="style/dataTables.bootstrap.min.css">
 <script src="js/citycontext.min.js"></script>
 -->
-    <!-- <script src="http://assets.citycontext.com/citycontext-ui.min.js"></script> -->
-    <!-- <link rel='stylesheet' href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css'> -->
+  <!-- <script src="http://assets.citycontext.com/citycontext-ui.min.js"></script> -->
+  <!-- <link rel='stylesheet' href='https://api.tiles.mapbox.com/mapbox.js/v2.1.5/mapbox.css'> -->
 </head>
 
 <body>
-    <!-- <div id="preloader">
+  <!-- <div id="preloader">
         <div id="status">&nbsp;</div>
     </div> -->
-    <!-- Body content -->
-    <div ng-controller="UniversityCtrl">
-        <div class="content-area">
+  <!-- Body content -->
+  <div ng-controller="UniversityCtrl">
+    <div class="content-area">
+      <!--                <div class="col-lg-12  col-md-12 col-sm-12">-->
+      <div class="search-form wow pulse" data-wow-delay="0.8s">
+        <div class="serach-box-outline">
+          <div class='search-box-wrapper'>
+            <div class='search-box'>
+              <div id='inputfield' class="search-input-group">
+                <form>
+                  <input autocomplete aa-datasets="getDatasets()" id="search-input" placeholder='Search universities and courses' type='text'><i class="fa fa-search" aria-hidden="true"></i></form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--                   </div>-->
+      </div>
+    </div>
+    <div class="container" ng-show="!isShow()">
+      <div class="content-area">
+        <div class="row page-title text-center wow zoomInDown" data-wow-delay="0.7s">
+          <h5>Our Process</h5>
+          <h2>How We Help Choose Most Suitable Course and University for you?</h2>
+          <p>Follow the process below to find your most suitable course and university in the UK</p>
+        </div>
+        <div class="row how-it-work text-center">
+          <div class="col-md-4">
+            <div class="single-work wow fadeInUp" data-wow-delay="0.8s"> <img src="img/how-work1.png" alt="">
+              <h3>Searching for courses and universities</h3>
+              <p>Using the outcomes from the job, we will put together a plan for the most effective marketing strategy to get the best results.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="single-work  wow fadeInUp" data-wow-delay="0.9s"> <img src="img/how-work2.png" alt="">
+              <h3>Compare different courses and universities</h3>
+              <p>Using the outcomes from the job, we will put together a plan for the most effective marketing strategy to get the best results.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="single-work wow fadeInUp" data-wow-delay="1s"> <img src="img/how-work3.png" alt="">
+              <h3>Find the most suitable course and universty</h3>
+              <p>Using the outcomes from the job, we will put together a plan for the most effective marketing strategy to get the best results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container" ng-show="isShow()">
+      <div class="content-area">
+        <div class="row">
+          <div class="col-lg-12  col-md-12 col-ms-12">
             <div class="row">
-                <!--                <div class="col-lg-12  col-md-12 col-sm-12">-->
-                <div class="search-form wow pulse" data-wow-delay="0.8s">
-                    <div class="serach-box-outline">
-                        <div class='search-box-wrapper'>
-                            <div class='search-box'>
-                                <div id='inputfield' class="search-input-group">
-                                    <form>
-                                        <input autocomplete aa-datasets="getDatasets()" id="search-input" placeholder='Search universities and courses' type='text'><i class="fa fa-search" aria-hidden="true"></i></form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--                   </div>-->
-                </div>
-            </div>
-        </div>
-        <div class="container" ng-show="!isShow()">
-            <div class="content-area">
-                <div class="row page-title text-center wow zoomInDown" data-wow-delay="0.7s">
-                    <h5>Our Process</h5>
-                    <h2>How We Help Choose Most Suitable Course and University for you?</h2>
-                    <p>Follow the process below to find your most suitable course and university in the UK</p>
-                </div>
-                <div class="row how-it-work text-center">
-                    <div class="col-md-4">
-                        <div class="single-work wow fadeInUp" data-wow-delay="0.8s"> <img src="img/how-work1.png" alt="">
-                            <h3>Searching for courses and universities</h3>
-                            <p>Using the outcomes from the job, we will put together a plan for the most effective marketing strategy to get the best results.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="single-work  wow fadeInUp" data-wow-delay="0.9s"> <img src="img/how-work2.png" alt="">
-                            <h3>Compare different courses and universities</h3>
-                            <p>Using the outcomes from the job, we will put together a plan for the most effective marketing strategy to get the best results.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="single-work wow fadeInUp" data-wow-delay="1s"> <img src="img/how-work3.png" alt="">
-                            <h3>Find the most suitable course and universty</h3>
-                            <p>Using the outcomes from the job, we will put together a plan for the most effective marketing strategy to get the best results.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container" ng-show="isShow()">
-            <div class="content-area">
-                <div class="row">
-                    <div class="col-lg-12  col-md-12 col-ms-12">
-                        <div class="row">
-                            <div class="col-lg-12 col-md-12 col-ms-12">
-                                <center>
-                                    <h2>University &amp; Course</h2>
-                                    <hr class="small"> </center>
-                                <div class="description">
-                                    <div class="row">
-                                        <div class="col-md-12 col-md-12 col-ms-12">
-                                            <div class="mainColumn pageCourse" id="mainContent">
-                                                <div class="contentWrapper">
-                                                    <header class="pageTitle">
-                                                        <h2>
-     <strong> {{universityInfo[3]}}</strong> 
+              <div class="col-lg-12 col-md-12 col-ms-12">
+                <center>
+                  <h2>University &amp; Course</h2>
+                  <hr class="small"> </center>
+                <div class="description">
+                  <div class="row">
+                    <div class="col-md-12 col-md-12 col-ms-12">
+                      <div class="mainColumn pageCourse" id="mainContent">
+                        <div class="contentWrapper">
+                          <header class="pageTitle">
+                            <h2>
+     <strong> <span  style="background: #00aeef; color:white;">{{universityInfo[3]}}</span></strong>
     </h2>
-                                                        <p><strong>Coures Mode:</strong> {{universityInfo[4]}}</p>
-                                                        <p class="pageTitle-institution"> <strong>Location:</strong> {{name}} / {{universityInfo[2]}} </p>
-                                                        <p><strong>Assessment Method:</strong> <a class="linkSite" target="_blank" href="{{courseInfo.AssessmentMethodsUrl}}">
+                            <p><strong>Coures Mode:</strong> {{universityInfo[4]}}</p>
+                            <p class="pageTitle-institution"> <strong>Location:</strong> {{name}} / {{universityInfo[2]}} </p>
+                            <p><strong>Assessment Method:</strong> <a class="linkSite" target="_blank" href="{{courseInfo.AssessmentMethodsUrl}}">
             Click here to see details about assessment method<span class="invisible"> (Opens in a new window)</span>
         </a></p>
-                                                        <p><strong>Learning &amp; Teaching Method:</strong> <a class="linkSite" target="_blank" href="{{courseInfo.LearningAndTeachingMethodsUrl}}">
+                            <p><strong>Learning &amp; Teaching Method:</strong> <a class="linkSite" target="_blank" href="{{courseInfo.LearningAndTeachingMethodsUrl}}">
             Click here to see details about learning and teaching method<span class="invisible"> (Opens in a new window)</span>
         </a></p>
-                                                        <p> <strong>Official website of this course:</strong><a class="linkSite" target="_blank" href="{{courseInfo.CoursePageUrl}}">
+                            <p> <strong>Official website of this course:</strong><a class="linkSite" target="_blank" href="{{courseInfo.CoursePageUrl}}">
             See this course at university/college website<span class="invisible"> (Opens in a new window)</span>
         </a> </p>
-                                                    </header>
-                                                    <ul class="measureList">
-                                                        <li>
-                                                            <div class="measureHighlight clearfix">
-                                                                <h2 class="resultMeasure resultMeasureNumber">
+                          </header>
+                          <ul class="measureList">
+                            <li>
+                              <div class="measureHighlight clearfix">
+                                <h2 class="resultMeasure resultMeasureNumber">
                 <strong><span>&#163;{{courseInfo.MaximumFeeForEnglandDomicile}}</span></strong>
             </h2>
-                                                                <div class="resultMeasureText">
-                                                                    <h2 class="resultMeasure">Average annual fee</h2> </div>
-                                                            </div>
-                                                            <div class="measureAdditional">
-                                                                <p>for students from England (This may be lower for some students who are eligible for fee support)</p>
-                                                                <p><a href="{{courseInfo.SupportDetailsUrl}}" target="_blank">Check the university or college website for details of financial support available.<span class="invisible">(Opens in a new window)</span></a></p>
-                                                                <div class="chartExplanation">
-                                                                    <p>Is there a fee waiver available? {{courseInfo.FeeWaiverAvailable}} </p>
-                                                                </div>
-                                                                <div class="chartExplanation">
-                                                                    <p>Is there means-tested support available? {{courseInfo.MeansTestedSupport}} </p>
-                                                                </div>
-                                                                <div class="chartExplanation">
-                                                                    <p>Is there non-means-tested support available? {{courseInfo.NonMeansTestedSupport}} </p>
-                                                                </div>
-                                                                <p>for students from Northern Ireland: &#163;{{courseInfo.MaximumFeeForNIDomicile}}</p>
-                                                                <p>for students from Scotland: &#163;{{courseInfo.MaximumFeeForScotlandDomicile}}</p>
-                                                                <p>for students from Wales: &#163;{{courseInfo.MaximumFeeForWalesDomicile}}</p>
-                                                                <div class="chartExplanation">
-                                                                    <p>Do the fees vary by year? {{courseInfo.FeeWaiverAvailable}} </p>
-                                                                </div>
-                                                                <p>Could fees increase with inflation? {{courseInfo.FeesToBeConfirmed}} </p>
-                                                                <p> <a href="{{courseLoc.AccommodationCostUrl}}" target="_blank" class="linkArrowRightBlue">More on Cost &amp;
+                                <div class="resultMeasureText">
+                                  <h2 class="resultMeasure">Average annual fee</h2> </div>
+                              </div>
+                              <div class="measureAdditional">
+                                <p>for students from England (This may be lower for some students who are eligible for fee support)</p>
+                                <p><a href="{{courseInfo.SupportDetailsUrl}}" target="_blank">Check the university or college website for details of financial support available.<span class="invisible">(Opens in a new window)</span></a></p>
+                                <div class="chartExplanation">
+                                  <p>Is there a fee waiver available? {{courseInfo.FeeWaiverAvailable}} </p>
+                                </div>
+                                <div class="chartExplanation">
+                                  <p>Is there means-tested support available? {{courseInfo.MeansTestedSupport}} </p>
+                                </div>
+                                <div class="chartExplanation">
+                                  <p>Is there non-means-tested support available? {{courseInfo.NonMeansTestedSupport}} </p>
+                                </div>
+                                <p>for students from Northern Ireland: &#163;{{courseInfo.MaximumFeeForNIDomicile}}</p>
+                                <p>for students from Scotland: &#163;{{courseInfo.MaximumFeeForScotlandDomicile}}</p>
+                                <p>for students from Wales: &#163;{{courseInfo.MaximumFeeForWalesDomicile}}</p>
+                                <div class="chartExplanation">
+                                  <p>Do the fees vary by year? {{courseInfo.FeeWaiverAvailable}} </p>
+                                </div>
+                                <p>Could fees increase with inflation? {{courseInfo.FeesToBeConfirmed}} </p>
+                                <p> <a href="{{courseLoc.AccommodationCostUrl}}" target="_blank" class="linkArrowRightBlue">More on Cost &amp;
 accommodation</a> </p>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="measureHighlight clearfix">
-                                                                <h2 class="resultMeasure resultMeasureNumber">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="measureHighlight clearfix">
+                                <h2 class="resultMeasure resultMeasureNumber">
                     <strong><span>&#163;30,000</span></strong>
                 </h2>
-                                                                <div class="resultMeasureText">
-                                                                    <h2 class="resultMeasure">
+                                <div class="resultMeasureText">
+                                  <h2 class="resultMeasure">
                     Average salary six months after the course
                 </h2> </div>
-                                                            </div>
-                                                            <div class="measureAdditional">
-                                                                <p>Typical salary range: &#163;26,000.00 - &#163;33,000.00</p>
-                                                                <h2>Average salary across the UK after taking a similar course</h2>
-                                                                <p>&#163;24,000.00 after six months (salary range: &#163;20,000.00 - &#163;28,000.00)</p>
-                                                                <p>&#163;30,000.00 after 40 months (salary range: &#163;24,000.00 - &#163;39,000.00)</p>
-                                                                <p><a href="{{courseInfo.EmploymentDetailsUrl}}" target="_blank" class="linkArrowRightBlue">More on Employment </a></p>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="measureHighlight clearfix">
-                                                                <h2 class="resultMeasure resultMeasureNumber">
+                              </div>
+                              <div class="measureAdditional">
+                                <p>Typical salary range: &#163;26,000.00 - &#163;33,000.00</p>
+                                <h2>Average salary across the UK after taking a similar course</h2>
+                                <p>&#163;24,000.00 after six months (salary range: &#163;20,000.00 - &#163;28,000.00)</p>
+                                <p>&#163;30,000.00 after 40 months (salary range: &#163;24,000.00 - &#163;39,000.00)</p>
+                                <p><a href="{{courseInfo.EmploymentDetailsUrl}}" target="_blank" class="linkArrowRightBlue">More on Employment </a></p>
+                              </div>
+                            </li>
+                            <li>
+                              <div class="measureHighlight clearfix">
+                                <h2 class="resultMeasure resultMeasureNumber">
                         <strong><span>&#163;{{courseLoc.BedCostLowerQuartile}} - &#163;{{courseLoc.BedCostUpperQuartile}}</span>
                         </strong>
             </h2>
-                                                                <div class="resultMeasureText">
-                                                                    <h2 class="resultMeasure">Typical annual cost of university/college accommodation</h2> </div>
-                                                            </div>
-                                                            <div class="measureAdditional">
-                                                                <div class="chartExplanation">
-                                                                    <p>Number of university/college beds: {{courseLoc.NumberOfBeds}}</p>
-                                                                </div>
-                                                                <p><a href="{{courseLoc.AccommodationCostUrl}}" class="linkSite" target="_blank">Accommodation costs explained<span class="invisible">(Opens in a new window)</span></a></p>
-                                                                <p><a href="{{courseLoc.AccommodationCostUrl}}" target="_blank" class="linkArrowRightBlue">More on Cost &amp;
+                                <div class="resultMeasureText">
+                                  <h2 class="resultMeasure">Typical annual cost of university/college accommodation</h2> </div>
+                              </div>
+                              <div class="measureAdditional">
+                                <div class="chartExplanation">
+                                  <p>Number of university/college beds: {{courseLoc.NumberOfBeds}}</p>
+                                </div>
+                                <p><a href="{{courseLoc.AccommodationCostUrl}}" class="linkSite" target="_blank">Accommodation costs explained<span class="invisible">(Opens in a new window)</span></a></p>
+                                <p><a href="{{courseLoc.AccommodationCostUrl}}" target="_blank" class="linkArrowRightBlue">More on Cost &amp;
 accommodation</a></p>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="measureHighlight clearfix">
-                                                                <h2 class="resultMeasure resultMeasureNumber">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="measureHighlight clearfix">
+                                <h2 class="resultMeasure resultMeasureNumber">
                         <strong><span>&#163;{{courseLoc.PrivateBedCostLowerQuartile}} - &#163;{{courseLoc.PrivateBedCostUpperQuartile}}</span>
                         </strong>
             </h2>
-                                                                <div class="resultMeasureText">
-                                                                    <h2 class="resultMeasure">Typical annual cost of private accommodation</h2> </div>
-                                                            </div>
-                                                            <div class="measureAdditional">
-                                                                <p><a href="{{courseLoc.AccommodationCostUrl}}" class="linkSite" target="_blank">Accommodation costs explained<span class="invisible">(Opens in a new window)</span></a></p>
-                                                                <p><a href="{{courseLoc.AccommodationCostUrl}}" target="_blank" class="linkArrowRightBlue">More on Cost &amp;
+                                <div class="resultMeasureText">
+                                  <h2 class="resultMeasure">Typical annual cost of private accommodation</h2> </div>
+                              </div>
+                              <div class="measureAdditional">
+                                <p><a href="{{courseLoc.AccommodationCostUrl}}" class="linkSite" target="_blank">Accommodation costs explained<span class="invisible">(Opens in a new window)</span></a></p>
+                                <p><a href="{{courseLoc.AccommodationCostUrl}}" target="_blank" class="linkArrowRightBlue">More on Cost &amp;
 accommodation</a></p>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="measureHighlight">
-                                                                <h2 class="resultMeasure">
+                              </div>
+                            </li>
+                            <li>
+                              <div class="measureHighlight">
+                                <h2 class="resultMeasure">
                     <strong><span>82%</span>
                     </strong>
                 <span>I am satisfied with the Students' Union at my institution</span>
             </h2> </div>
-                                                            <div class="measureAdditional">
-                                                                <p><a href="{{courseLoc.StudentUnionUrl}}" class="linkSite" target="_blank">Visit the student union website<span class="invisible">(Opens in a new window)</span></a></p>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                                <center>
-                                    <h2>Ranking Table</h2>
-                                    <hr class="small"> </center>
-                                <div class="ranking">
-                                    <table class="table  dataTable no-footer" style="text-align:center;" id="data-table">
-                                        <thead>
-                                            <tr>
-                                                <th style="text-align:center">Ranking</th>
-                                                <th style="text-align:center">Univeristy Name</th>
-                                                <th style="text-align:center">Teaching</th>
-                                                <th style="text-align:center">International</th>
-                                                <th style="text-align:center">Research</th>
-                                                <th style="text-align:center">Citatons</th>
-                                                <th style="text-align:center">Income</th>
-                                                <th style="text-align:center">Total Score</th>
-                                                <!--
+                              <div class="measureAdditional">
+                                <p><a href="{{courseLoc.StudentUnionUrl}}" class="linkSite" target="_blank">Visit the student union website<span class="invisible">(Opens in a new window)</span></a></p>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                <center>
+                  <h2>Ranking Table</h2>
+                  <hr class="small"> </center>
+                <div class="ranking">
+                  <table class="table  dataTable no-footer" style="text-align:center;" id="data-table">
+                    <!-- <thead>
+                      <tr>
+                        <th style="text-align:center">Ranking</th>
+                        <th style="text-align:center">Univeristy Name</th>
+                        <th style="text-align:center">Teaching</th>
+                        <th style="text-align:center">International</th>
+                        <th style="text-align:center">Research</th>
+                        <th style="text-align:center">Citatons</th>
+                        <th style="text-align:center">Income</th>
+                        <th style="text-align:center">Total Score</th>
+
+                      </tr>
+                    </thead> -->
+                    <thead>
+                      <tr>
+                        <th style="text-align:center">Ranking</th>
+                        <th style="text-align:center">Last Year Ranking</th>
+                        <th style="text-align:center">University</th>
+                        <th style="text-align:center">Teaching quality (%)</th>
+                        <th style="text-align:center">Student experience (%)</th>
+                        <th style="text-align:center">Research quality (%)</th>
+                        <th style="text-align:center">Graduate prospects (%)</th>
+                        <th style="text-align:center">Firsts/2:1s (%)</th>
+                            <th style="text-align:center">Completion rate (%)</th>
+                                <th style="text-align:center">Student-staff ratio</th>
+                                <th style="text-align:center">Services/ facilities spend (£)</th>
+                                <th style="text-align:center">Total</th>
+                        <!--
                               <th style="text-align:center">Student Population</th>
   <th style="text-align:center">Student Staff Ratio</th>
   <th style="text-align:center">International Student Ratio</th>
   -->
-                                            </tr>
-                                        </thead>
-                                        <tbody> </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-ms-12">
-                                <center>
-                                    <h2>Location &amp; Map</h2>
-                                    <hr class="small"> </center>
-                                <div class="map">
-                                    <ng-map default-style="false" center="{{universityInfo[0]}},{{universityInfo[1]}}" zoom="15" pan-control="true" pan-control-options="{position:'TOP_RIGHT'}" map-type-control="true" map-type-control-options="{style:'HORIZONTAL_BAR', position:'TOP_CENTER'}" zoom-control="true" zoom-control-options="{style:'LARGE', position:'LEFT_CENTER'}" scale-control="true" street-view-control="true" street-view-control-options="{position:'LEFT_TOP'}">
-                                        <marker id="foo" position="{{universityInfo[0]}},{{universityInfo[1]}}" on-click="map.showInfoWindow(event, 'bar')"> </marker>
-                                        <info-window id="bar" max-width="400">
-                                            <div ng-non-bindable>
-                                                <div id="siteNotice"></div>
-                                                <!--                                                <h3 id="firstHeading" class="firstHeading">Basic Info</h3>-->
-                                                <div id="bodyContent">
-                                                    <p> <b>Location:</b> {{name}} / {{universityInfo[2]}}
-                                                        <br> <b>Course:</b> {{universityInfo[3]}}
-                                                        <br> <b>Mode:</b> {{universityInfo[4]}}
-                                                        <br> <b>Course Page:</b> <a href=" {{universityInfo[5]}}" target="_blank">
+                      </tr>
+                    </thead>
+                    <tbody> </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-ms-12">
+                <center>
+                  <h2>Course Location</h2>
+                  <hr class="small"> </center>
+                  <div id="panel-control">
+                <div id="panel">
+                  <div id="output">
+
+                  </div></div></div>
+                  <div class="map" id="locationMap">
+
+                  <!-- <ng-map default-style="false" center="{{universityInfo[0]}},{{universityInfo[1]}}" zoom="15" pan-control="true" pan-control-options="{position:'TOP_RIGHT'}" map-type-control="true" map-type-control-options="{style:'HORIZONTAL_BAR', position:'TOP_CENTER'}"
+                      zoom-control="true" zoom-control-options="{style:'LARGE', position:'LEFT_CENTER'}" scale-control="true" street-view-control="true" street-view-control-options="{position:'LEFT_TOP'}">
+                    <marker id="foo" position="{{universityInfo[0]}},{{universityInfo[1]}}" on-click="map.showInfoWindow(event, 'bar')"> </marker>
+                    <info-window id="bar" max-width="400">
+                      <div ng-non-bindable>
+                        <div id="siteNotice"></div>
+
+                        <div id="bodyContent">
+                          <p> <b>Location:</b> {{name}} / {{universityInfo[2]}}
+                            <br> <b>Course:</b> {{universityInfo[3]}}
+                            <br> <b>Mode:</b> {{universityInfo[4]}}
+                            <br> <b>Course Page:</b> <a href=" {{universityInfo[5]}}" target="_blank">
                          {{universityInfo[5]}}<br>
                         </a> </p>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </info-window>
-                                    </ng-map>
-                                </div>
-                            </div>
-                            <div class="col-lg-12 col-md-12 col-ms-12">
-                                <center>
-                                    <h2>City Information</h2>
-                                    <hr class="small"> </center>
-                                <div class="city">
-                                    <div class="container-fluid">
-                                        <!-- weather  -->
-                                        <center>
-                                            <h3>Weather</h3></center>
-                                        <div class="row">
-                                            <div class="col-lg-12 col-md-12  col-ms-12">
-                                                <!--
+                          </p>
+                        </div>
+                      </div>
+                    </info-window>
+                  </ng-map> -->
+                </div>
+              </div>
+              <div class="col-lg-12 col-md-12 col-ms-12">
+                <center>
+                  <h2>City Information</h2>
+                  <hr class="small"> </center>
+                <div class="city">
+                  <div class="container-fluid">
+                    <!-- weather  -->
+                    <center>
+                      <h3>Weather</h3></center>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12  col-ms-12">
+                        <!--
                                             <center>
                                                 <h4>Next Hours</h4></center>
 -->
-                                                <div id="chart_small"></div>
-                                                <!--                                            <div id="forecast_small" style="width: auto; height: 200px;"></div>--></div>
-                                            <div class="col-lg-12 col-md-12 col-ms-12">
-                                                <div id="forecast_small"></div>
-                                            </div>
-                                            <div class="col-lg-12  col-md-12  col-ms-12">
-                                                <!--
+                        <div id="chart_small"></div>
+                        <!--                                            <div id="forecast_small" style="width: auto; height: 200px;"></div>--></div>
+                      <div class="col-lg-12 col-md-12 col-ms-12">
+                        <div id="forecast_small"></div>
+                      </div>
+                      <div class="col-lg-12  col-md-12  col-ms-12">
+                        <!--
                                            <center>
     <h4>Daily Forecast</h4></center>
 -->
-                                                <div id="dailyChart"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- city  -->
+                        <div id="dailyChart"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- city  -->
+                  <!--
                                     <div class="container-fluid">
                                         <center>
                                             <h3>Criminality</h3></center>
                                         <div id="criminality-widget"></div>
                                     </div>
-                                    <!--
+-->
+                  <!--
                                    <div class="container-fluid">
     <center>
         <h3>Demographics</h3></center>
     <div id="demographics-widget"></div>
 </div>
 -->
+                  <!--
                                     <div class="container-fluid">
                                         <center>
                                             <h3>Transport</h3></center>
                                         <div id="transport-widget"></div>
                                     </div>
-                                </div>
+-->
+                  <div class="container-fluid">
+                    <center>
+                      <h3>Criminality</h3></center>
+                    <br>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div id="map-control">
+                          <div id="details">
+                            <div class="selection">
+                              <center>
+                                <p><strong> <span id="no-of-crimes"></span><span id="committed"></strong> crimes committed in</span>
+                                  <select id="month">
+                                    <option value="2015-02">Feb 2015</option>
+                                    <option value="2015-01">Jan 2015</option>
+                                    <option value="2014-12">Dec 2014</option>
+                                    <option value="2014-11">Nov 2014</option>
+                                    <option value="2014-10">Oct 2014</option>
+                                    <option value="2014-09">Sep 2014</option>
+                                    <option value="2014-08">Aug 2014</option>
+                                    <option value="2014-07">Jul 2014</option>
+                                    <option value="2014-06">Jun 2014</option>
+                                    <option value="2014-05">May 2014</option>
+                                    <option value="2014-04">Apr 2014</option>
+                                    <option value="2014-03">Mar 2014</option>
+                                    <option value="2014-02">Feb 2014</option>
+                                    <option value="2014-01">Jan 2014</option>
+                                    <option value="2013-12">Dec 2013</option>
+                                    <option value="2013-11">Nov 2013</option>
+                                    <option value="2013-10">Oct 2013</option>
+                                    <option value="2013-09">Sep 2013</option>
+                                    <option value="2013-08">Aug 2013</option>
+                                    <option value="2013-07">Jul 2013</option>
+                                    <option value="2013-06">Jun 2013</option>
+                                    <option value="2013-05">May 2013</option>
+                                    <option value="2013-04">Apr 2013</option>
+                                    <option value="2013-03">Mar 2013</option>
+                                    <option value="2013-02">Feb 2013</option>
+                                    <option value="2013-01">Jan 2013</option>
+                                    <option value="2012-12">Dec 2012</option>
+                                    <option value="2012-11">Nov 2012</option>
+                                    <option value="2012-10">Oct 2012</option>
+                                    <option value="2012-09">Sep 2012</option>
+                                    <option value="2012-08">Aug 2012</option>
+                                    <option value="2012-07">Jul 2012</option>
+                                    <option value="2012-06">Jun 2012</option>
+                                    <option value="2012-05">May 2012</option>
+                                    <option value="2012-04">Apr 2012</option>
+                                    <option value="2012-03">Mar 2012</option>
+                                    <option value="2012-02">Feb 2012</option>
+                                    <option value="2012-01">Jan 2012</option>
+                                    <option value="2012-12">Dec 2011</option>
+                                    <option value="2012-11">Nov 2011</option>
+                                    <option value="2012-10">Oct 2011</option>
+                                    <option value="2012-09">Sep 2011</option>
+                                    <option value="2012-08">Aug 2011</option>
+                                    <option value="2012-07">Jul 2011</option>
+                                    <option value="2012-06">Jun 2011</option>
+                                    <option value="2012-05">May 2011</option>
+                                    <option value="2012-04">Apr 2011</option>
+                                    <option value="2012-03">Mar 2011</option>
+                                    <option value="2012-02">Feb 2011</option>
+                                    <option value="2012-01">Jan 2011</option>
+                                  </select>
+                                </p>
+                              </center>
                             </div>
+                            <div id="chart">
+
+                            </div>
+                          </div>
+
                         </div>
+
+                        <div id="map_canvas"></div>
+                      </div>
                     </div>
+
+                  </div>
+
+                  <div class="container-fluid">
+                    <center>
+                      <h3>Transprot</h3></center>
+                    <br>
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                        <div id="options">
+
+
+                        </div>
+                        <div id='transportMap'></div>
+                      </div>
+
+
+
+                    </div>
+                  </div>
+
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-    </div>
-    <script src="js/d3.min.js" charset="utf-8"></script>
-    <script src="js/d3.tip.min.js"></script>
-    <!-- crossfilter.js -->
-    <script src="js/crossfilter.js"></script>
-    <!-- dc.js -->
-    <script src="js/dc.js"></script>
-    <!--	colorbrewer.js-->
-    <script src="js/colorbrewer.js"></script>
-    <script src="js/jquery.dataTables.min.js"></script>
-    <script src="js/dataTables.bootstrap.min.js"></script>
-    <script src="js/dataTable.js"></script>
-    <!--        <script src="js/chart.js"></script>-->
-    </div>
+  </div>
+  <script src="js/d3.min.js" charset="utf-8"></script>
+  <script src="js/d3.tip.min.js"></script>
+  <!-- crossfilter.js -->
+  <script src="js/crossfilter.js"></script>
+  <!-- dc.js -->
+  <script src="js/dc.js"></script>
+  <!--	colorbrewer.js-->
+  <script src="js/colorbrewer.js"></script>
+  <script src="js/jquery.dataTables.min.js"></script>
+  <script src="js/dataTables.bootstrap.min.js"></script>
+  <script src="js/dataTable.js"></script>
+
+  <!--        <script src="js/chart.js"></script>-->
+  </div>
 </body>

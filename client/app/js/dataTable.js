@@ -1,14 +1,14 @@
 //dataTable
 var dataTable;
-d3.csv('../data/university_ranking_2016.csv', function (error, data) {
+d3.csv('../data/Times_University_Ranking.csv', function (error, data) {
     data.forEach(function (d) {
         // d.dd = dateFormat.parse(d["Start_Date"]);
         // d.year = +yearFormat(d.dd);
-        d.universityName = d["university_name"];
+        d.universityName = d["University"];
     });
     var ndx = crossfilter(data);
     var universityNameDim = ndx.dimension(function (d) {
-            return d["university_name"];
+            return d["University"];
         })
         , dataTable = $('#data-table').dataTable({
             "bJQueryUI": true
@@ -23,28 +23,42 @@ d3.csv('../data/university_ranking_2016.csv', function (error, data) {
             , "bAutoWidth": true
             , "bProcessing": true
             , "aoColumns": [{
-                    "data": "ranking"
+                    "data": "Rank"
                     , "defaultContent": ""
       }, {
-                    "data": "university_name"
+                    "data": "Last Year Rank"
                     , "defaultContent": ""
     }, {
-                    "data": "teaching"
+                    "data": "University"
                     , "defaultContent": ""
   }, {
-                    "data": "international"
+                    "data": "Teaching quality (%)"
                     , "defaultContent": ""
 }, {
-                    "data": "research"
+                    "data": "Student experience (%)"
                     , "defaultContent": ""
 }, {
-                    "data": "citations"
+                    "data": "Research quality (%)"
                     , "defaultContent": ""
 }, {
-                    "data": "income"
+                    "data": "Graduate prospects (%)"
                     , "defaultContent": ""
 }, {
-                    "data": "total_score"
+                    "data": "Firsts/2:1s (%)"
+                    , "defaultContent": ""
+},{
+                    "data": "Completion rate (%)"
+                    , "defaultContent": ""
+},
+{
+                    "data": "Student-staff ratio"
+                    , "defaultContent": ""
+},
+{
+                    "data": "Services/ facilities spend (pounds)"
+                    , "defaultContent": ""
+},{
+                    "data": "Total"
                     , "defaultContent": ""
 }
 
