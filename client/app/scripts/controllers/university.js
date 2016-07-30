@@ -201,9 +201,9 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
 
         service.getDistanceMatrix({
           origins: [myLatLng],
-          destinations: [london, edinburgh, manchester,cardiff],
-            travelMode: 'DRIVING',
-        //   travelMode: google.maps.DirectionsTravelMode.TRANSIT,
+          destinations: [london, edinburgh, manchester, cardiff],
+          travelMode: 'DRIVING',
+          //   travelMode: google.maps.DirectionsTravelMode.TRANSIT,
 
           unitSystem: google.maps.UnitSystem.METRIC,
           avoidHighways: false,
@@ -248,9 +248,9 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
                 // outputDiv.innerHTML += '<div>''</div>'originList[i] + ' to ' + destinationList[j] +
                 //   ': ' + results[j].distance.text + ' in ' +
                 //   results[j].duration.text + '<br>';
-                outputDiv.innerHTML += '<div>'+ ' To ' + '<strong>'+destinationList[j]+'</strong>' +
+                outputDiv.innerHTML += '<div>' + ' To ' + '<strong>' + destinationList[j] + '</strong>' +
                   ': ' + results[j].distance.text + ' in ' +
-                  results[j].duration.text + '<br><br>'+'</div>';
+                  results[j].duration.text + '<br><br>' + '</div>';
               }
             }
           }
@@ -707,7 +707,7 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
           radius = Math.min(width, height) / 2,
 
           color, arc, pie, svg, g;
-
+        // this.ev = 'mouseover';
 
         $('#chart').empty();
         for (i in this.categories) {
@@ -722,7 +722,7 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
           return d.no;
         });
         svg = d3.select("#chart").append("svg").attr("width", width).attr("height", height).append("g").attr("transform", "translate(" + width / 1.9 + "," + height / 2.2 + ")");
-        g = svg.selectAll(".arc").data(pie(data)).enter().append("g").attr("class", "arc").on(this.ev, function(d) {
+        g = svg.selectAll(".arc").data(pie(data)).enter().append("g").attr("class", "arc").on('mouseover', function(d) {
           $("#tooltip").html('<p><strong>' + d.data.cat.replace(/\-/g, ' ') + ':</strong> ' + d.data.no + ' crimes</p>').css("top", y + 10).css("left", x + 10).show();
         }).on('mousemove', function(d) {
           $("#tooltip").css("top", y + 10).css("left", x + 10);
@@ -811,7 +811,7 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
             content: crimes[i].markerContent,
             anchorPoint: point
           });
-          google.maps.event.addListener(marker, this.ev, (function(pointer, bubble, mode) {
+          google.maps.event.addListener(marker, 'mouseover', (function(pointer, bubble, mode) {
             return function() {
               self.bubbleChart(bubble);
               bubble.open(self.map, pointer);
@@ -1027,7 +1027,7 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
       $(document).ready(function() {
         initializeTransportMap();
 
-setupListeners();
+        setupListeners();
 
       });
 
@@ -1082,21 +1082,14 @@ setupListeners();
 
 
 
-      function setupListeners (){
-          var self = this;
-             $('#input :checkbox').on('change', function() {
-               self.performSearch();
-             });
-             //                $("input:text:visible:first").focus();
+      function setupListeners() {
+
+        $('#input :checkbox').on('change', function() {
+          performSearch();
+        });
+        //                $("input:text:visible:first").focus();
       }
 
-    //   CrimeMap.prototype.setupListeners = function() {
-    //     var self = this;
-    //     $('#month').on('change', function() {
-    //       self.getCrimeData($(this).val());
-    //     });
-    //     //                $("input:text:visible:first").focus();
-    //   };
 
       function performSearch() {
         clearMaps();
