@@ -122,16 +122,16 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
         controlUI.style.cursor = 'pointer';
         controlUI.style.marginBottom = '22px';
         controlUI.style.textAlign = 'center';
-        controlUI.style.margin = '5px';
+        controlUI.style.margin = '10px';
         controlUI.title = 'Click to recenter the map';
         controlDiv.appendChild(controlUI);
 
         // Set CSS for the control interior.
         var controlText = document.createElement('div');
-        controlText.style.color = '#00aeef';
+        controlText.style.color = 'black';
         controlText.style.fontFamily = 'Roboto,Arial,sans-serif';
-        controlText.style.fontSize = '16px';
-        controlText.style.lineHeight = '38px';
+        controlText.style.fontSize = '12px';
+        controlText.style.lineHeight = '30px';
         controlText.style.paddingLeft = '5px';
         controlText.style.paddingRight = '5px';
         controlText.innerHTML = 'Center Map';
@@ -1027,6 +1027,8 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
       $(document).ready(function() {
         initializeTransportMap();
 
+setupListeners();
+
       });
 
       function getLetteredIcon(letter) {
@@ -1068,11 +1070,33 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
         });
         google.maps.event.addListenerOnce(transportMap, 'bounds_changed', performSearch);
 
+        // for (var i = 0; i < options.length; i++) {
+        //   document.getElementById('options').innerHTML += '<input type="checkbox" id="' + options[i] + '" onclick="performSearch();"> <img src=' + getLetteredIcon(String.fromCharCode('A'.charCodeAt(0) + i)) + ' height="20" /> ' + options[i] + '<br>';
+        // };
         for (var i = 0; i < options.length; i++) {
-          document.getElementById('options').innerHTML += '<input type="checkbox" id="' + options[i] + '" onclick="performSearch();"> <img src=' + getLetteredIcon(String.fromCharCode('A'.charCodeAt(0) + i)) + ' height="20" /> ' + options[i] + '<br>';
+          document.getElementById('options').innerHTML += '<input type="checkbox" id="' + options[i] + '" > <img src=' + getLetteredIcon(String.fromCharCode('A'.charCodeAt(0) + i)) + ' height="20" /> ' + options[i] + '<br>';
         };
 
       }
+
+
+
+
+      function setupListeners (){
+          var self = this;
+             $('#input :checkbox').on('change', function() {
+               self.performSearch();
+             });
+             //                $("input:text:visible:first").focus();
+      }
+
+    //   CrimeMap.prototype.setupListeners = function() {
+    //     var self = this;
+    //     $('#month').on('change', function() {
+    //       self.getCrimeData($(this).val());
+    //     });
+    //     //                $("input:text:visible:first").focus();
+    //   };
 
       function performSearch() {
         clearMaps();
