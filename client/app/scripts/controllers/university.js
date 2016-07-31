@@ -1035,9 +1035,9 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
       function getLetteredIcon(letter) {
         return "http://www.google.com/mapfiles/marker" + letter + ".png";
       }
-
+      var transportLatLng;
       function initializeTransportMap() {
-        var transportLatLng = {
+        transportLatLng = {
           lat: $scope.result[1].data[0].Latitude,
           lng: $scope.result[1].data[0].Longitude
         };
@@ -1081,11 +1081,9 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
       }
 
 
-
-
       function setupListeners() {
-
-        $('#input :checkbox').on('change', function() {
+        
+        $('#options input:checkbox').change(function() {
           performSearch();
         });
         //                $("input:text:visible:first").focus();
@@ -1094,11 +1092,12 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
 
       function performSearch() {
         clearMaps();
-        var clickedOptions = [];
-        for (var i = 0; i < options.length; i++) {
-          if (document.getElementById(options[i]).checked) {
-            performTypeSearch(options[i], getLetteredIcon(String.fromCharCode('A'.charCodeAt(0) + i)));
-          }
+        var selected = [];
+        $('#options input:checked').each(function() {
+          selected.push($(this).attr('id'));
+        });
+        for (var i = 0; i < selected.length; i++) {  
+          performTypeSearch(selected[i], getLetteredIcon(String.fromCharCode('A'.charCodeAt(0) + i)));
         }
       }
 
