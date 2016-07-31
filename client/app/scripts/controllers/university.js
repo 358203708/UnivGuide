@@ -27,7 +27,7 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
   //    }).render();
   //   demographicsWidget.queryByLatLon('50.907916,-1.400318');
   /*Algolia search widget*/
-  var client = algolia.Client('4NHNQEE2ZH', '14a0b4fc5ebaddc5f6372146de81f6f0');
+  var client = algolia.Client('WYNTAASNFY', '89b8cea623f99504bfd4cecc0d31568e');
   var index = client.initIndex('kisData');
   var templateTeam = Hogan.compile('<div class="team">' + '<div class="name">{{{ _highlightResult.NAME.value }}}</div>' + '<div class="location">{{{ _highlightResult.TITLE.value }}}</div>' + '<div class="location">{{{ _highlightResult.MODE.value }}}</div>' + '</div>');
   $scope.getDatasets = function() {
