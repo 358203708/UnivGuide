@@ -592,36 +592,36 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
         this.setupListeners();
         // this.getLastUpdated();
       };
-    //   CrimeMap.prototype.getLastUpdated = function() {
-    //     var self = this;
-    //     this.lastUpdated = {};
-    //     $.getJSON("http://data.police.uk/api/crime-last-updated", function(data) {
-    //       self.lastUpdated.rawDate = new Date(data.date);
-    //       if (self.lastUpdated.rawDate !== 'Invalid Date') {
-    //         self.lastUpdated.curr_month_num = self.lastUpdated.rawDate.getMonth() + 1; //Months are zero based
-    //         self.lastUpdated.curr_year_num = self.lastUpdated.rawDate.getFullYear();
-    //       }
-    //       self.updateDropdown();
-    //     });
-    //   };
-    //   CrimeMap.prototype.updateDropdown = function() {
-    //     var lastStaticMonth = 2;
-    //     if (this.lastUpdated.curr_month_num > lastStaticMonth) {
-    //       var monthsToBuild = this.lastUpdated.curr_month_num - lastStaticMonth;
-    //       for (var i = 0; i < monthsToBuild; ++i) {
-    //         var genMonth = (+lastStaticMonth + i + 1);
-    //         if (genMonth < 10) {
-    //           genMonth = ('0' + genMonth);
-    //         }
-    //         $('#month').prepend('<option value="2015-' + genMonth + '">' + monthNames[+genMonth - 1] + ' 2015</option>');
-    //       }
-    //     }
-    //     $('#month')[0].selectedIndex = 0;
-    //   };
+      //   CrimeMap.prototype.getLastUpdated = function() {
+      //     var self = this;
+      //     this.lastUpdated = {};
+      //     $.getJSON("http://data.police.uk/api/crime-last-updated", function(data) {
+      //       self.lastUpdated.rawDate = new Date(data.date);
+      //       if (self.lastUpdated.rawDate !== 'Invalid Date') {
+      //         self.lastUpdated.curr_month_num = self.lastUpdated.rawDate.getMonth() + 1; //Months are zero based
+      //         self.lastUpdated.curr_year_num = self.lastUpdated.rawDate.getFullYear();
+      //       }
+      //       self.updateDropdown();
+      //     });
+      //   };
+      //   CrimeMap.prototype.updateDropdown = function() {
+      //     var lastStaticMonth = 2;
+      //     if (this.lastUpdated.curr_month_num > lastStaticMonth) {
+      //       var monthsToBuild = this.lastUpdated.curr_month_num - lastStaticMonth;
+      //       for (var i = 0; i < monthsToBuild; ++i) {
+      //         var genMonth = (+lastStaticMonth + i + 1);
+      //         if (genMonth < 10) {
+      //           genMonth = ('0' + genMonth);
+      //         }
+      //         $('#month').prepend('<option value="2015-' + genMonth + '">' + monthNames[+genMonth - 1] + ' 2015</option>');
+      //       }
+      //     }
+      //     $('#month')[0].selectedIndex = 0;
+      //   };
       //Render the initial map
       CrimeMap.prototype.renderMap = function() {
 
-        var myLatLng = new google.maps.LatLng( $scope.result[1].data[0].Latitude, $scope.result[1].data[0].Longitude);
+        var myLatLng = new google.maps.LatLng($scope.result[1].data[0].Latitude, $scope.result[1].data[0].Longitude);
         this.map = new google.maps.Map(document.getElementById(this.domId), {
           center: myLatLng,
           zoom: 13,
@@ -1022,7 +1022,7 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
       var transportMap;
       var markersArray = [];
       var options = ['train_station', 'bus_station', 'subway_station', 'transit_station', 'airport',
-        'grocery_or_supermarket', 'hospital', 'movie_theater', 'restaurant', 'shopping_center', 'park', 'night_club', 'pharmacy', 'police', 'embassy', 'shopping_mall'
+        'grocery_or_supermarket', 'shopping_center', 'shopping_mall', 'hospital', 'movie_theater', 'restaurant', 'park', 'night_club', 'pharmacy', 'police', 'embassy'
       ];
 
       $(document).ready(function() {
@@ -1036,6 +1036,7 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
         return "http://www.google.com/mapfiles/marker" + letter + ".png";
       }
       var transportLatLng;
+
       function initializeTransportMap() {
         transportLatLng = {
           lat: $scope.result[1].data[0].Latitude,
@@ -1062,7 +1063,8 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
         service = new google.maps.places.PlacesService(transportMap);
 
 
-        var defaultMarker = 'http://maps.google.com/mapfiles/kml/shapes/ranger_station.png';
+        var defaultMarker = 'https://chart.googleapis.com/chart?' +
+          'chst=d_map_pin_letter&chld=O|FFFF00|000000';
         var marker = new google.maps.Marker({
           position: transportLatLng,
           map: transportMap,
@@ -1071,18 +1073,16 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
         });
         google.maps.event.addListenerOnce(transportMap, 'bounds_changed', performSearch);
 
+
         // for (var i = 0; i < options.length; i++) {
-        //   document.getElementById('options').innerHTML += '<input type="checkbox" id="' + options[i] + '" onclick="performSearch();"> <img src=' + getLetteredIcon(String.fromCharCode('A'.charCodeAt(0) + i)) + ' height="20" /> ' + options[i] + '<br>';
+        //   document.getElementById('options').innerHTML += '<input type="checkbox" id="' + options[i] + '" > <img src=' + getLetteredIcon(String.fromCharCode('A'.charCodeAt(0) + i)) + ' height="20" /> ' + options[i] + '<br>';
         // };
-        for (var i = 0; i < options.length; i++) {
-          document.getElementById('options').innerHTML += '<input type="checkbox" id="' + options[i] + '" > <img src=' + getLetteredIcon(String.fromCharCode('A'.charCodeAt(0) + i)) + ' height="20" /> ' + options[i] + '<br>';
-        };
 
       }
 
 
       function setupListeners() {
-        
+
         $('#options input:checkbox').change(function() {
           performSearch();
         });
@@ -1092,12 +1092,15 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
 
       function performSearch() {
         clearMaps();
-        var selected = [];
-        $('#options input:checked').each(function() {
-          selected.push($(this).attr('id'));
-        });
-        for (var i = 0; i < selected.length; i++) {  
-          performTypeSearch(selected[i], getLetteredIcon(String.fromCharCode('A'.charCodeAt(0) + i)));
+        var clickedOptions = [];
+        // $('#options input:checked').each(function() {
+        //   selected.push($(this).attr('id'));
+        // });
+        for (var i = 0; i < options.length; i++) {
+
+          if (document.getElementById(options[i]).checked) {
+            performTypeSearch(options[i], getLetteredIcon(String.fromCharCode('A'.charCodeAt(0) + i)));
+          }
         }
       }
 

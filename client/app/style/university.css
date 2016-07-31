@@ -20,28 +20,28 @@
                           /*background-image: url(http://img.archiexpo.com/images_ae/photo-g/141377-8276726.jpg);*/
                         }
                         #panel-control {
-                            width: 20%;
-                            margin: 0 5%;
-                            left: 0;
-                            position: absolute;
-                            top: 0;
-                            z-index: 2;
+                          width: 20%;
+                          margin: 0 5%;
+                          left: 0;
+                          position: absolute;
+                          top: 0;
+                          z-index: 2;
                         }
                         #panel {
-                            background: white;
-        border: 2px solid #00aeef;
-        box-sizing: border-box;
-        clear: left;
-        display: inherit;
-        float: left;
-        font-family: inherit;
-        margin-top: 0;
-        padding: 5px 10px;
-        width: 100%;
-        width: 230px;
-        height: auto;
-        margin-top: 200px;
-        margin-left: -10px;
+                          background: white;
+                          border: 2px solid #00aeef;
+                          box-sizing: border-box;
+                          clear: left;
+                          display: inherit;
+                          float: left;
+                          font-family: inherit;
+                          margin-top: 0;
+                          padding: 5px 10px;
+                          width: 100%;
+                          width: 230px;
+                          height: auto;
+                          margin-top: 200px;
+                          margin-left: -10px;
                         }
                         #output {
                           font-size: inherit;
@@ -54,8 +54,8 @@
                           /*background-image: url(http://img.archiexpo.com/images_ae/photo-g/141377-8276726.jpg);*/
                         }
                         div.dataTables_wrapper {
-                            padding: 10px;
-       font-size: 0.75em;
+                          padding: 10px;
+                          font-size: 0.75em;
                         }
                         div .description {
                           padding: 20px;
@@ -351,4 +351,20 @@
                         #transportMap {
                           width: 1080px;
                           height: 550px;
+                        }
+                        #check {
+                          background: white;
+                          border: 2px solid #00aeef;
+                          box-sizing: border-box;
+                          clear: left;
+                          display: inherit;
+                          float: left;
+                          font-family: inherit;
+                          margin-top: 0;
+                          padding: 5px 10px;
+                          width: 100%;
+                          width: 230px;
+                          height: auto;
+                          margin-top: 100px;
+                          margin-left: -10px;
                         }
