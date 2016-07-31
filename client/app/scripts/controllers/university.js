@@ -192,6 +192,10 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
           zoomControlOptions: {
             style: google.maps.ZoomControlStyle.LARGE,
             position: google.maps.ControlPosition.RIGHT_BOTTOM
+          },
+          mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+            position: google.maps.ControlPosition.RIGHT_TOP
           }
         });
 
@@ -626,13 +630,16 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
           center: myLatLng,
           zoom: 13,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
-          mapTypeControl: false,
-          disableDefaultUI: true,
+          mapTypeControl: true,
+          disableDefaultUI: false,
           zoomControl: true,
           zoomControlOptions: {
             style: google.maps.ZoomControlStyle.LARGE,
             position: google.maps.ControlPosition.RIGHT_BOTTOM
-          }
+        }, mapTypeControlOptions: {
+           style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+           position: google.maps.ControlPosition.RIGHT_TOP
+         }
         });
 
 
@@ -1056,7 +1063,10 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
           zoomControlOptions: {
             style: google.maps.ZoomControlStyle.LARGE,
             position: google.maps.ControlPosition.RIGHT_BOTTOM
-          }
+        }, mapTypeControlOptions: {
+           style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+           position: google.maps.ControlPosition.RIGHT_TOP
+         }
         });
 
         infowindow = new google.maps.InfoWindow();
