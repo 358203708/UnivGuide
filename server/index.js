@@ -92,7 +92,7 @@ app.get('/hello/:pubukprn/Course/:kisCourseId/:kisMode/Statistics', function (re
 
 
 console.log('Listening on port 3000...');
-app.listen(3000);
+app.listen(process.env.PORT||3000);
 // Connect to MongoDB
 // mongoose.connect('mongodb://localhost/meanapp');
 // mongoose.connection.once('open', function () {

@@ -63,12 +63,21 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
     /*Send GET quries to UniStats API */
     var result = [];
     var promises = [];
-    promises.push($http.get('http://localhost:3000/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode
+    // promises.push($http.get('http://localhost:3000/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode
+    //   //'/hello/:pubukprn/Course/:kisCourseId/:kisMode'
+    // ));
+    // promises.push($http.get('http://localhost:3000/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode + '/Locations'));
+    // promises.push($http.get('http://localhost:3000/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode + '/Stages'));
+    // promises.push($http.get('http://localhost:3000/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode + '/Statistics'));
+
+    promises.push($http.get('https://univguide.herokuapp.com/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode
       //'/hello/:pubukprn/Course/:kisCourseId/:kisMode'
     ));
-    promises.push($http.get('http://localhost:3000/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode + '/Locations'));
-    promises.push($http.get('http://localhost:3000/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode + '/Stages'));
-    promises.push($http.get('http://localhost:3000/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode + '/Statistics'));
+    promises.push($http.get('https://univguide.herokuapp.com/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode + '/Locations'));
+    promises.push($http.get('https://univguide.herokuapp.com/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode + '/Stages'));
+    promises.push($http.get('https://univguide.herokuapp.com/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode + '/Statistics'));
+
+
     $q.all(promises).
     then(function(response) {
       //   console.log(data);
