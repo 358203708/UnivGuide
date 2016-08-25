@@ -1,0 +1,77 @@
+\contentsline {chapter}{Acknowledgements}{vii}{dummy.4}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.5}
+\contentsline {section}{\numberline {1.1}Problem Statement }{1}{section.6}
+\contentsline {section}{\numberline {1.2}Aims and Objectives }{2}{section.7}
+\contentsline {section}{\numberline {1.3}Dissertation Structure }{2}{section.8}
+\contentsline {chapter}{\numberline {2}Background Research}{4}{chapter.9}
+\contentsline {section}{\numberline {2.1}Factors Influencing Higher Education Destination Choices }{4}{section.10}
+\contentsline {section}{\numberline {2.2}Open Data in Higher Education }{5}{section.11}
+\contentsline {section}{\numberline {2.3}Data Visualisation in Higher Education }{7}{section.12}
+\contentsline {section}{\numberline {2.4}Summary}{9}{section.13}
+\contentsline {chapter}{\numberline {3}Project Management}{10}{chapter.14}
+\contentsline {section}{\numberline {3.1}Project Constraints}{10}{section.15}
+\contentsline {section}{\numberline {3.2}Project Methodology}{11}{section.18}
+\contentsline {section}{\numberline {3.3}Time Management}{12}{section.21}
+\contentsline {section}{\numberline {3.4}Risk Analysis and Management}{14}{section.24}
+\contentsline {subsection}{\numberline {3.4.1}Risk Identification}{14}{subsection.25}
+\contentsline {subsection}{\numberline {3.4.2}Risk Analysis}{15}{subsection.28}
+\contentsline {subsection}{\numberline {3.4.3}Risk Management}{16}{subsection.31}
+\contentsline {section}{\numberline {3.5}Summary}{17}{section.34}
+\contentsline {chapter}{\numberline {4}System Analysis}{19}{chapter.35}
+\contentsline {section}{\numberline {4.1}Stakeholders Identification }{19}{section.36}
+\contentsline {section}{\numberline {4.2}Survey Design and Analysis }{19}{section.37}
+\contentsline {subsection}{\numberline {4.2.1}Survey Design }{20}{subsection.38}
+\contentsline {subsection}{\numberline {4.2.2}Results Analysis }{20}{subsection.39}
+\contentsline {section}{\numberline {4.3}User Requirements }{25}{section.56}
+\contentsline {section}{\numberline {4.4}System Requirements }{26}{section.59}
+\contentsline {subsection}{\numberline {4.4.1}Functional Requirements }{26}{subsection.60}
+\contentsline {subsection}{\numberline {4.4.2}Non-functional Requirements }{27}{subsection.63}
+\contentsline {section}{\numberline {4.5}Summary}{27}{section.66}
+\contentsline {chapter}{\numberline {5}System Design}{28}{chapter.67}
+\contentsline {section}{\numberline {5.1}Open Datasets}{28}{section.68}
+\contentsline {subsection}{\numberline {5.1.1}Unistats API}{28}{subsection.69}
+\contentsline {subsection}{\numberline {5.1.2}Google Maps API }{29}{subsection.70}
+\contentsline {subsection}{\numberline {5.1.3}OpenWeatherMap API }{29}{subsection.71}
+\contentsline {subsection}{\numberline {5.1.4}Police API }{29}{subsection.72}
+\contentsline {subsection}{\numberline {5.1.5}THE University Ranking Table }{29}{subsection.73}
+\contentsline {section}{\numberline {5.2}Architecture Design }{29}{section.74}
+\contentsline {section}{\numberline {5.3}Detailed Design}{30}{section.77}
+\contentsline {subsection}{\numberline {5.3.1}Use Case Diagram}{30}{subsection.78}
+\contentsline {subsection}{\numberline {5.3.2}Activity Diagram}{31}{subsection.81}
+\contentsline {subsection}{\numberline {5.3.3}Sequence Diagram}{32}{subsection.84}
+\contentsline {section}{\numberline {5.4}User Interface Design }{34}{section.89}
+\contentsline {subsection}{\numberline {5.4.1}Layout}{34}{subsection.90}
+\contentsline {subsection}{\numberline {5.4.2}Initial Page}{35}{subsection.93}
+\contentsline {subsection}{\numberline {5.4.3}University section }{36}{subsection.96}
+\contentsline {subsection}{\numberline {5.4.4}About section }{37}{subsection.99}
+\contentsline {section}{\numberline {5.5}Summary}{38}{section.102}
+\contentsline {chapter}{\numberline {6}System Implementation}{39}{chapter.103}
+\contentsline {section}{\numberline {6.1}Technologies and Tools }{39}{section.104}
+\contentsline {subsection}{\numberline {6.1.1}Programming Language}{39}{subsection.105}
+\contentsline {subsection}{\numberline {6.1.2}Development Framework}{39}{subsection.106}
+\contentsline {subsection}{\numberline {6.1.3}User Interface}{40}{subsection.107}
+\contentsline {subsection}{\numberline {6.1.4}Data Visualisation}{40}{subsection.108}
+\contentsline {subsection}{\numberline {6.1.5}Development Tools}{40}{subsection.109}
+\contentsline {section}{\numberline {6.2}System Components Implementation}{40}{section.110}
+\contentsline {subsection}{\numberline {6.2.1}Search Bar }{41}{subsection.111}
+\contentsline {subsection}{\numberline {6.2.2}University \& Course}{42}{subsection.116}
+\contentsline {subsection}{\numberline {6.2.3}Ranking Table}{44}{subsection.125}
+\contentsline {subsection}{\numberline {6.2.4}Course Location}{45}{subsection.128}
+\contentsline {subsection}{\numberline {6.2.5}Weather}{46}{subsection.131}
+\contentsline {subsection}{\numberline {6.2.6}Criminality}{47}{subsection.136}
+\contentsline {subsection}{\numberline {6.2.7}Infrastructure}{48}{subsection.139}
+\contentsline {section}{\numberline {6.3}Summary}{49}{section.144}
+\contentsline {chapter}{\numberline {7}Testing and Evaluation}{50}{chapter.145}
+\contentsline {section}{\numberline {7.1}System Testing}{50}{section.146}
+\contentsline {section}{\numberline {7.2}System Evaluation}{54}{section.150}
+\contentsline {subsection}{\numberline {7.2.1}Survey Design }{54}{subsection.151}
+\contentsline {subsection}{\numberline {7.2.2}Results Analysis}{54}{subsection.152}
+\contentsline {section}{\numberline {7.3}Summary}{56}{section.163}
+\contentsline {chapter}{\numberline {8}Conclusion}{57}{chapter.164}
+\contentsline {section}{\numberline {8.1}Future Work}{57}{section.165}
+\contentsline {section}{\numberline {8.2}Critical Reflection}{58}{section.166}
+\contentsline {section}{\numberline {8.3}Conclusion}{58}{section.167}
+\contentsline {chapter}{\numberline {A}Questionnaire for Requirement Analysis}{60}{appendix.168}
+\contentsline {chapter}{\numberline {B}Task List for Comparative Evaluation}{64}{appendix.169}
+\contentsline {chapter}{\numberline {C}Questionnaire for Comparative Evaluation}{66}{appendix.178}
+\contentsline {chapter}{Bibliography}{69}{dummy.179}
