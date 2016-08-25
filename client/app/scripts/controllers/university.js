@@ -27,7 +27,7 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
   //    }).render();
   //   demographicsWidget.queryByLatLon('50.907916,-1.400318');
   /*Algolia search widget*/
-  var client = algolia.Client('WYNTAASNFY', '89b8cea623f99504bfd4cecc0d31568e');
+  var client = algolia.Client('RZUDA2ML9P', '14901a3da5b8b705e9ad4c3749ce8149');
   var index = client.initIndex('kisData');
   var templateTeam = Hogan.compile('<div class="team">' + '<div class="name">{{{ _highlightResult.NAME.value }}}</div>' + '<div class="location">{{{ _highlightResult.TITLE.value }}}</div>' + '<div class="location">{{{ _highlightResult.MODE.value }}}</div>' + '</div>');
   $scope.getDatasets = function() {
@@ -63,8 +63,8 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
     /*Send GET quries to UniStats API */
     var result = [];
     var promises = [];
+
     promises.push($http.get('http://localhost:3000/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode
-      //'/hello/:pubukprn/Course/:kisCourseId/:kisMode'
     ));
     promises.push($http.get('http://localhost:3000/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode + '/Locations'));
     promises.push($http.get('http://localhost:3000/hello/' + $scope.pubukprn + '/Course/' + $scope.kisCourseId + '/' + $scope.kisMode + '/Stages'));
@@ -455,8 +455,8 @@ angular.module('clientApp').config(['$httpProvider', function($httpProvider) {
           var pressure = forecast[i].main.pressure;
           var cloud = forecast[i].clouds.all;
           var icon = forecast[i].weather[0].icon;
-          if (forecast[i].sys.pod == 'd') html = html + '<div style="float: left; margin-left:10px; margin-right:6px; padding-left:16px; padding-right:12px; text-align: center;" >';
-          else html = html + '<div style="float: left; margin-left:10px; margin-right:6px; padding-left:16px; padding-right:12px; text-align: center; background-color:#eeeeee" >';
+          if (forecast[i].sys.pod == 'd') html = html + '<div style="float: left; margin-left:10px; margin-right:6px; padding-left:14px; padding-right:12px; text-align: center;" >';
+          else html = html + '<div style="float: left; margin-left:10px; margin-right:6px; padding-left:14px; padding-right:12px; text-align: center; background-color:#FFF" >';
           html = html + '<img alt="' + text + '" src="/img/w/' + icon + '.png"/>\
                         		<div class="small_val" title="Temp">' + forecast[i].main.temp + 'C</div>\
                         		<div class="small_val" title="Wind">' + forecast[i].wind.speed + 'm/s</div>\
