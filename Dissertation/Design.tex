@@ -32,7 +32,10 @@ Due to the lack of related open APIs, the dataset about university ranking was f
 
 \section{Architecture Design}
 
-The architecture design is a process that describes the structure, behaviour and more views of a system and it has a great impact on the performance, robustness, distributability, and maintainability of a system \cite{5_sommerville_2011}. AngularJS, a kind of front-end JavaScript framework, is used to implement this system. More in detail, the overall architecture of this system is the model-view-viewmodel (MVVM) pattern. MVVM pattern helps separate business logic (model) from the UI (view) using the view model, so it allows the developers to write better organized, and therefore more maintainable system. As Figure 5.1 shows, the MVVM pattern has three logical components (model, view and view model), which are interrelated and interact with each other. The detailed interaction between these three components will be explained in the following section.\begin{figure}[H]
+The architecture design is a process that describes the structure, behaviour and more views of a system and it has a great impact on the performance, robustness, distributability, and maintainability of a system \cite{5_sommerville_2011}. 
+
+
+AngularJS, a kind of front-end JavaScript framework, is used to implement this system. More in detail, the overall architecture of this system is the model-view-viewmodel (MVVM) pattern. Though a server-side proxy is used in this system to send proxied front-end requests to Unistats API, it is only used for Unistats API and not the core part of the system architecture. Therefore, the server-side proxy is not present in the architecture design in order to make it easy to understand. MVVM pattern helps separate business logic (model) from the UI (view) using the view model, so it allows the developers to write better organized, and therefore more maintainable system. As Figure 5.1 shows, the MVVM pattern has three logical components (model, view and view model), which are interrelated and interact with each other. The detailed interaction between these three components will be explained in the following section.\begin{figure}[H]
   \centering
   \includegraphics[width=4cm]{./img/Picture7}
   \caption{System Architecture}
@@ -92,7 +95,7 @@ Moreover, Figure 5.5 is an another sequence diagram that provides information ab
 
 \section{User Interface Design}
 
-A fundamental reality of software development is that the user interface is the system to the users \cite{ambler2000user}. Hence, the user interface is as important as the functionality that a system provides to the users. A good user interface design can make the system easy to use and understand. In this section, some typical wireframes drawings will be used to introduce the user interface design of this system.
+A fundamental reality of software development is that the user interface is the system to the users \cite{ambler2000user}. Hence, the user interface is as important as the functionality that a system provides to the users. A good user interface design can make the system easy to use and understand. To ensure this system available in different devices (PC, smartphones and tablets), the responsive web design is used for the user interface of this system. In this section, some typical wireframes drawings will be used to introduce the user interface design of this system.
 
 \subsection{Layout}
 

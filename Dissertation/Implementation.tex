@@ -11,7 +11,13 @@ Appropriate implementation technologies and tools are the keys to the success of
 
 \subsection{Programming Language}JavaScript is chosen as the main programming language for developing this system. There are several reasons for this choice. Firstly, AngularJS is a JavaScript-based front-end framework, so it is natural to choose JavaScript as the programming language. Secondly, many third-party libraries, like D3.js, for data visualisation are written in JavaScript. Last but not the least, JavaScript, which is the most popular programming language in the world \cite{ARC}, has a big community and a variety of tutorials, which makes it easy to develop and maintain this system. \subsection{Development Framework}In order to build this system rapidly and efficiently, AngularJS, a commonly-used front-end framework is chosen to develop this system. More narrowly, the framework of this system is MVVM pattern, as explained in chapter 5. This pattern allows the developers to write better organized, and therefore more maintainable system, so it a good choice for developing this system.\subsection{User Interface}Apart from AngularJS, some basic building technologies of the front-end development are used for the web interface design. HTML5 is used for structuring and presenting content on the web interface, and CSS3 is used for describing the presentation of a document written in HTML5.
  
-\subsection{Data Visualisation}Regarding with the objectives of this project, some data visualisation technologies are chosen to visualize open data. Highcharts.js is a charting library written in JavaScript, offering an easy way of adding interactive charts to the website web application. It is used to visualize weather data from OpenWeatherMap API and provide international students with data visualisation about the weather information of cities. Although highcharts.js can provide developers with a rapid way of adding charts in the web pages, it only has limited choices of charts. Hence, D3.js is also used in this system to visualize crime data from Police API. It is a JavaScript library that allows developers to build the data visualisation framework they want. Besides, the requirements analysis in chapter 4 suggests that the location of universities and the environment of cities are crucial factors influencing international students’ decision-making process. So, Google Maps JavaScript API is applied in this system to visualize the geographical information and the infrastructure of cities.\subsection{Development Tools}There are two main development tools used for this system. One tool is Github, a version control tool for managing this system and keeping track of the changes in code, and another one is Atom, an integrated development environment (IDE) for developing the web application of this project.
+\subsection{Data Visualisation}Regarding with the objectives of this project, some data visualisation technologies are chosen to visualize open data. Highcharts.js is a charting library written in JavaScript, offering an easy way of adding interactive charts to the website web application. It is used to visualize weather data from OpenWeatherMap API and provide international students with data visualisation about the weather information of cities. Although highcharts.js can provide developers with a rapid way of adding charts in the web pages, it only has limited choices of charts. Hence, D3.js is also used in this system to visualize crime data from Police API. It is a JavaScript library that allows developers to build the data visualisation framework they want. Besides, the requirements analysis in chapter 4 suggests that the location of universities and the environment of cities are crucial factors influencing international students’ decision-making process. So, Google Maps JavaScript API is applied in this system to visualize the geographical information and the infrastructure of cities.\subsection{Development Tools}There are two main development tools used for this system. One tool is Github, a version control tool for managing this system and keeping track of the changes in code, and another one is Atom, an integrated development environment (IDE) for developing the web application of this project.
+
+\subsection{Deployment Platform}
+
+In order to allow the users access to this system at anytime and anyplace, this system is published online, and the website for this system is \href{http://univguide.netlify.com/#/}{http://univguide.netlify.com/\#/}. Specifically, the front-end of this system is deployed with Netlify and the back-end (Node.js proxy) is deployed with Heroku.
+
+
 \section{System Components Implementation}Based on the system analysis and design, some components are built to implement this system. This section will explain the main components of this system with some screenshots and necessarily codes presented. \subsection{Search Bar}	As shown in the use case diagram, most components of this system rely on the search results, so the search bar is the most important functionality of this system. The first step for the users is to search universities and courses while using this system. \begin{figure}[H]
   \centering
   \includegraphics[width=15cm]{./img/Picture16}
@@ -35,26 +41,26 @@ Appropriate implementation technologies and tools are the keys to the success of
 When the users enter university names and course titles, the suggestions will show up and the matched results will be highlighted. Once the suggestions are selected, the search bar will convert the inputs to their corresponding identifiers and send \$http.get() requests containing these identifiers to Unistats API. \subsection{University \& Course}The University\&Course part provides some basic information about universities and courses, such as tuition fee and living expense, to help the users gain quick insights into them. Figure 6.3 shows part of information displayed in University\&Course part. \begin{figure}[H]
   \centering
   \includegraphics[width=15cm]{./img/Picture18}
-  \caption{University \& Course Part}
+  \caption{Part Information in University \& Course Part}
   \label{Figure:figex}
 \end{figure}
 \begin{figure}[H]
   \centering
   \includegraphics[width=12cm]{./img/Picture19}
-  \caption{Server-side Proxy}
+  \caption{Back-end Proxy}
   \label{Figure:figex}
 \end{figure}
 As discussed above, four \$http.get() requests will be sent to Unistats API to get information about the selected universities and courses, but the problem is that \$http.get() requests sent from the client side is not allowed by Unistats API. To solve this problem, Node.js is used in this system to allow these requests through a server side proxy and have the server side proxy return the data back to the client side (see Figure 6.4).\begin{figure}[H]
   \centering
   \includegraphics[width=15cm]{./img/Picture20}
-  \caption{Client-side Requests}
+  \caption{Front-end Requests}
   \label{Figure:figex}
 \end{figure}
-As shown in Figure 6.5, an endpoint (/hello) is set up to grab these four requests to the server side. The client side will send those parameters to the port of the server side after receiving the search results from the search bar. Afterwards, the server side proxy will send the proxied requests (see Figure 6.6) to Unistats API and return responses to the client side. Finally, the client-side will display the proxied responses on the webpage. 
+As shown in Figure 6.5, an endpoint (/hello) is set up to grab these four requests to the server side. The client side will send those parameters to the port of the server side after receiving the search results from the search bar. Afterwards, the server side proxy will send the proxied requests (see Figure 6.6) to Unistats API and return responses to the client side. Finally, the front-end will display the proxied responses on the webpage. 
 \begin{figure}[H]
   \centering
   \includegraphics[width=15cm]{./img/Picture21}
-  \caption{Server-side Proxied Proxy}
+  \caption{One of Back-end Proxied Requests}
   \label{Figure:figex}
 \end{figure}
 \subsection{Ranking Table}

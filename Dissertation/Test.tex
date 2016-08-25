@@ -4,7 +4,11 @@
 
 \chapter{Testing and Evaluation} \label{Chapter:Testing and Evaluation}
 
-This chapter will provide information about the testing and evaluation process of this system. First of all, the functional testing will be carried out to identify whether this system meets the functional requirement specifications. Afterwards, the performance testing will be conducted to check whether the system performance affects the user experience. At last, this chapter will evaluate this system using a comparative survey and analyse the survey results.\section{System Testing}System testing is a crucial phase in the software development lifecycle because it ensures the software system can conform with all user requirements and achieve high quality. In this section, the black box testing will be conducted to test the functionalities of this system. Black box testing is a software testing process that verifies the functionalities and quality of the system without peering into its internal structure. 
+This chapter will provide information about the testing and evaluation process of this system. First of all, functional testing will be carried out to identify whether this system meets the functional requirement specifications. Afterwards, non-functional testing will be conducted to check whether the system can achieve a high quality. At last, this chapter will introduce a comparative survey and analyse the survey results for system evaluation.\section{System Testing}System testing is a crucial phase in the software development lifecycle because it ensures the software system can conform to all user requirements and achieve a high quality. The system testing process is normally divided into functional testing and non-functional testing. This section will firstly introduce the functional testing and then non-functional testing of this system. 
+
+\subsection{Functional Testing}
+Functional testing is a process that checks software systems to ensure that they have all required functionalities that are specified within the functional requirements. In this project, functional testing verifies the functionalities of the system without peering into its internal structure. Therefore, the testing process only focuses on whether the actual outputs of this system match expectations, given certain input actions. Table 7.1 displays the test cases designed for functional testing with their descriptions, and Table 7.2 provides the result of each test case in the testing process.
+
 
 \begin{table}[H]
 \centering
@@ -22,12 +26,12 @@ TC-6        & Check functionalities in infrastructure part  & Check response on 
 \end{tabular}
 \end{table}
 
-Therefore, the testing process only focuses on whether the actual outputs of this system match expectations, given certain input actions. Table 7.1 displays the test cases designed for this system with their descriptions, and Table 7.2 provides the results of test cases in the black box testing.
+
 
 \begin{landscape}
 \begin{center}
 \begin{longtable}{|p{1cm}|p{3.5cm}|p{4cm}|p{3cm}|p{5cm}|p{2.5cm}|p{1cm}|}
-\caption{Results of Black Box Testing} \label{tab:long} \\
+\caption{Results of Functional Testing} \label{tab:long} \\
 
 \hline \multicolumn{1}{|c|}{\textbf{ID}}   &  \multicolumn{1}{|c|}{\textbf{Pre-conditions}}  &  \multicolumn{1}{|c|}{\textbf{Test Steps}}  &  \multicolumn{1}{|c|}{\textbf{Test Data}} &  \multicolumn{1}{|c|}{\textbf{Expected Results}} &  \multicolumn{1}{|c|}{\textbf{Actual Results}} &  \multicolumn{1}{|c|}{\textbf{Pass/Fail}} \\ \hline 
 \endfirsthead
@@ -56,6 +60,37 @@ TC-6 & The webpage displays the map in infrastructure part & 1.Select airport  \
 \end{longtable}
 \end{center}
 \end{landscape}
+
+\subsection{Non-functional Testing}
+
+Non-functional testing, which consists of various testings, is used to test all non-functional attributes of software systems and ensures they can achieve a high quality. However, only several testings in non-functional testing are carried out in this project due to the time limit.   
+
+\subsubsection{Compatibility Testing}
+
+Compatibility testing, part of software non-functional tests, is testing conducted on the application to evaluate the application's compatibility with the different environment. Because this system is a web application, it should be compatible with different browsers. The compatibility testing of this system proved that it is compatible with commonly-used web browsers (Chrome, Firefox, IE and Safari).
+
+
+\subsubsection{Usability Testing}
+
+The user interface design follows the principles of modern user interaction and responsive web design. So, the results of the usability testing shows the user interface of this system is easy to understand and this system can be accessed via different devices (PC, smartphones and tablets).
+
+\subsubsection{Accessibility Testing}
+
+Several tools listed in Table 7.3 are used to test the accessibility of this system, which helps find errors that were difficult to discover such as wrong tag properties, or invalid links. The outcomes of accessibility testing prove that this system can meet Web accessibility standards provided by W3C.
+
+%\begin{table}[H]
+%\centering
+%\caption{Tools Used for Accessibility Testing}
+%\label{my-label}
+%\begin{tabular}{|l|l|}
+%\hline
+%\textbf{Tool}                 & \textbf{Description}                       \\ \hline
+%W3C Link Checker              & Check links and anchors in webpages \\ \hline
+%W3C Markup Validation Service & Check the markup (HTML) of this web application \\ \hline
+%W3C CSS Validation Service    & Check Cascading Style Sheets (CSS) \\ \hline
+%JSLint                        & Checks errors and potential problems in JavaScript \\ \hline
+%\end{tabular}
+%\end{table}
 
 \section{System Evaluation}
 
@@ -96,7 +131,7 @@ User Experience & 0          & 0          & 1          & 11         & 5         
 \end{table}
 
 
-Table 7.4 shows the respondents’ opinions on the contents provided in this system. Most respondents strongly agreed that the contents provided in Course Location, Criminality and Infrastructure part were helpful for their destination choices.  The reason for this opinion was some of them thought course location, safety and infrastructure had great influences on their decision making for higher education, while others thought those contents could allow them to gain insights into universities from a different perspective. Some respondents thought the weather forecasts could give them a basic understanding of the weather in different cities, but it would more helpful if the historical information could be provided in this system. Moreover, some respondents hoped this system could provide some detailed descriptions about universities and courses in University\&Course part and some charts in Rakings Table part.
+Table 7.4 shows the respondents’ opinions on the contents provided in this system. Most respondents strongly agreed that the contents provided in Course Location, Criminality and Infrastructure part were helpful for their destination choices.  The reason for this opinion was some of them thought course location, safety and infrastructure had great influences on their decision making for higher education, while others thought those contents could allow them to gain insights into universities from a different perspective. Some respondents thought the weather forecasts could give them a basic understanding of the weather in different cities, but it would more helpful if the historical information could be provided in this system. Moreover, some respondents hoped this system could provide some detailed descriptions about universities and courses in University\&Course part and some charts in Rankings Table part.
 
 \begin{table}[H]
 \centering
