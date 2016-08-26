@@ -1,6 +1,6 @@
 This is BibTeX, Version 0.99d (TeX Live 2015)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
-The top-level auxiliary file: /Users/ShanchuanWu/Documents/Southampton/Courses/Summer Project/Dissertation/Dissertation/.texpadtmp/Thesis.aux
+The top-level auxiliary file: /Users/ShanchuanWu/GitHub/UnivGuide/Dissertation/.texpadtmp/Thesis.aux
 A level-1 auxiliary file: Introduction.aux
 A level-1 auxiliary file: Background.aux
 A level-1 auxiliary file: Management.aux
@@ -36,7 +36,7 @@ Warning--empty institution in berners5star
 Warning--empty year in berners5star
 You've used 20 entries,
             1791 wiz_defined-function locations,
-            571 strings with 7242 characters,
+            571 strings with 7160 characters,
 and the built_in function-call counts, 3623 in all, are:
 = -- 335
 > -- 117
